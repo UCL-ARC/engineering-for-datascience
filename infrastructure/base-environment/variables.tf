@@ -3,16 +3,6 @@ variable img_display_name {
   default = "almalinux-9-genericcloud-9.5-20241120"
 }
 
-variable namespace {
-  type = string
-  default = "ds4eng-ns"
-}
-
-variable network_name {
-  type = string
-  default = "ds4eng-ns/ds4eng"
-}
-
 variable username {
   type = string
 #  default = ""
