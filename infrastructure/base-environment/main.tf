@@ -10,7 +10,7 @@ data "harvester_image" "img" {
 
 data "harvester_ssh_key" "mysshkey" {
   name      = var.keyname
-  namespace = local.namespace
+  namespace = "${local.namespace}"
 }
 
 resource "random_id" "secret" {
@@ -19,7 +19,7 @@ resource "random_id" "secret" {
 
 resource "harvester_cloudinit_secret" "cloud-config" {
   name      = "cloud-config-${random_id.secret.hex}"
-  namespace = local.namespace
+  namespace = "${local.namespace}"
 
   user_data = templatefile("cloud-init.tmpl.yml", {
       public_key_openssh = data.harvester_ssh_key.mysshkey.public_key
@@ -31,7 +31,7 @@ resource "harvester_virtualmachine" "vm" {
   count = var.vm_count
 
   name                 = "${var.username}-base-${format("%02d", count.index + 1)}-${random_id.secret.hex}"
-  namespace            = local.namespace
+  namespace            = "${local.namespace}"
   restart_after_update = true
 
   description = "Base VM"
@@ -51,7 +51,7 @@ resource "harvester_virtualmachine" "vm" {
     name           = "nic-1"
     wait_for_lease = true
     type           = "bridge"
-    network_name   = local.network_name
+    network_name   = "${local.network_name}"
   }
 
   disk {
