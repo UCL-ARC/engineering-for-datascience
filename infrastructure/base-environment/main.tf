@@ -1,3 +1,4 @@
+# Interpret namespace and network name based on user name
 locals {
   namespace = "${var.username}-comp0235-ns"
   network_name = "${var.username}-comp0235-ns/ds4eng"
