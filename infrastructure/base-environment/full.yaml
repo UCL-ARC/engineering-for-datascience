@@ -2,5 +2,6 @@
 - hosts: all
   roles:
   - common
+  - reboot
   - openmpi
   - python312
