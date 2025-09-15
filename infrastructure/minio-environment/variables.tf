@@ -3,16 +3,6 @@ variable img_display_name {
   default = "almalinux-9-genericcloud-9.5-20241120"
 }
 
-variable namespace {
-  type = string
-  default = "arc-general-ns"
-}
-
-variable network_name {
-  type = string
-  default = "arc-general-ns/gen-proj"
-}
-
 variable username {
   type = string
 #  default = ""

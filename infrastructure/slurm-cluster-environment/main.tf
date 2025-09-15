@@ -1,3 +1,9 @@
+# Interpret namespace and network name based on user name
+locals {
+  namespace = "${var.username}-comp0235-ns"
+  network_name = "${var.username}-comp0235-ns/ds4eng"
+}
+
 data "harvester_image" "img" {
   display_name = var.img_display_name
   namespace    = "harvester-public"
@@ -5,7 +11,7 @@ data "harvester_image" "img" {
 
 data "harvester_ssh_key" "mysshkey" {
   name      = var.keyname
-  namespace = var.namespace
+  namespace = local.namespace
 }
 
 resource "random_id" "secret" {
@@ -25,7 +31,7 @@ resource "harvester_virtualmachine" "loginvm" {
   count = 1
 
   name                 = "${var.username}-login-${format("%02d", count.index + 1)}-${random_id.secret.hex}"
-  namespace            = var.namespace
+  namespace            = local.namespace
   restart_after_update = true
 
   description = "Cluster Login Node"
@@ -45,7 +51,7 @@ resource "harvester_virtualmachine" "loginvm" {
     name           = "nic-1"
     wait_for_lease = true
     type           = "bridge"
-    network_name   = var.network_name
+    network_name   = local.network_name
   }
 
   disk {
@@ -69,7 +75,7 @@ resource "harvester_virtualmachine" "mgmtvm" {
   count = 1
 
   name                 = "${var.username}-mgmt-${format("%02d", count.index + 1)}-${random_id.secret.hex}"
-  namespace            = var.namespace
+  namespace            = local.namespace
   restart_after_update = true
 
   description = "Cluster Head Node"
@@ -89,7 +95,7 @@ resource "harvester_virtualmachine" "mgmtvm" {
     name           = "nic-1"
     wait_for_lease = true
     type           = "bridge"
-    network_name   = var.network_name
+    network_name   = local.network_name
   }
 
   disk {
@@ -113,7 +119,7 @@ resource "harvester_virtualmachine" "workervm" {
   count = var.vm_count
 
   name                 = "${var.username}-worker-${format("%02d", count.index + 1)}-${random_id.secret.hex}"
-  namespace            = var.namespace
+  namespace            = local.namespace
   restart_after_update = true
 
   description = "Cluster Compute Node"
@@ -133,7 +139,7 @@ resource "harvester_virtualmachine" "workervm" {
     name           = "nic-1"
     wait_for_lease = true
     type           = "bridge"
-    network_name   = var.network_name
+    network_name   = local.network_name
   }
 
   disk {
