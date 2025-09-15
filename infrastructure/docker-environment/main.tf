@@ -20,7 +20,7 @@ resource "random_id" "secret" {
 
 resource "harvester_cloudinit_secret" "cloud-config" {
   name      = "cloud-config-${random_id.secret.hex}"
-  namespace = var.namespace
+  namespace = local.namespace
 
   user_data = templatefile("cloud-init.tmpl.yml", {
       public_key_openssh = data.harvester_ssh_key.mysshkey.public_key
