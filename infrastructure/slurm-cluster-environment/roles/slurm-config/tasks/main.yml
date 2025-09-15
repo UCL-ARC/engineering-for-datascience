@@ -1,0 +1,21 @@
+- name: Setup Slurm conf
+  ansible.builtin.template:
+    src: templates/slurm.conf.j2
+    dest:  /nfs/config/slurm.conf
+    mode: "0644"
+  run_once: true
+  become: true
+  become_user: root
+- name: Delete default slurm config
+  ansible.builtin.file:
+    path: /etc/slurm/slurm.conf
+    state: absent
+  become: true
+  become_user: root
+- name: Create link to shared slurm config
+  ansible.builtin.file:
+    src: /nfs/config/slurm.conf
+    dest: /etc/slurm/slurm.conf
+    state: link
+  become: true
+  become_user: root

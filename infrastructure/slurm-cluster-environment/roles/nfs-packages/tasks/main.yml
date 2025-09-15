@@ -1,0 +1,6 @@
+- name: Install NFS packages
+  ansible.builtin.dnf:
+    name: "nfs-utils"
+    state: latest
+  become: true
+  become_user: root

@@ -1,0 +1,91 @@
+- name: Delete Existing Private Key
+  ansible.builtin.file:
+    state: absent 
+    path: /home/almalinux/.ssh/id_ed25519
+- name: Delete Existing Public Key
+  ansible.builtin.file:
+    state: absent 
+    path: /home/almalinux/.ssh/id_ed25519.pub    
+- name: Generate key
+  ansible.builtin.shell: ssh-keygen -q -t ed25519 -f /home/almalinux/.ssh/id_ed25519 -C "" -N ""
+- name: Add to authorized_keys
+  ansible.builtin.shell: cat /home/almalinux/.ssh/id_ed25519.pub >> /home/almalinux/.ssh/authorized_keys
+- name: Get private keys
+  ansible.builtin.fetch:
+    src: /home/almalinux/.ssh/id_ed25519
+    dest: ./.generated/temp_id_ed25519/
+    flat: true
+- name: Get public keys
+  ansible.builtin.fetch:
+    src: /home/almalinux/.ssh/id_ed25519.pub
+    dest: ./.generated/temp_id_ed25519/
+    flat: true
+- name: Delete Munge Existing Key
+  ansible.builtin.file:
+    state: absent 
+    path: /etc/munge/munge.key
+  become: true
+  become_user: root
+- name: Generate Munge key
+  ansible.builtin.shell: create-munge-key
+  become: true
+  become_user: root
+- name: Get munge keys
+  ansible.builtin.fetch:
+    src: /etc/munge/munge.key
+    dest: ./.generated/munge/
+    flat: true
+  become: true
+  become_user: root
+- name: Start munge
+  ansible.builtin.systemd_service:
+    name: munge
+    state: started
+    enabled: true
+  become: true
+  become_user: root
+- name: Generate connauthfile
+  local_action: ansible.builtin.command dd if=/dev/random of=./.generated/connauthfile bs=128 count=1
+- name: Auth file
+  ansible.builtin.copy:
+    src: ./.generated/connauthfile
+    dest: /etc/beegfs/conn.auth
+    owner: root
+    group: root
+    mode: 400
+  become: true
+  become_user: root
+- name: ssh config file
+  ansible.builtin.copy:
+    src: files/ssh_config
+    dest: /home/almalinux/.ssh/config
+- name: key config file
+  ansible.builtin.copy:
+    src: files/san.cnf
+    dest: /root/san.cnf
+  become: true
+  become_user: root
+- name: Check to see if we already have certificates
+  ansible.builtin.stat:
+    path: /etc/beegfs/cert.pem
+  register: certfile
+  become: true
+- name: BeeGFS certs
+  ansible.builtin.shell: 'openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/beegfs/key.pem -out /etc/beegfs/cert.pem -config /root/san.cnf  -subj "/CN=mgmtnode"'
+  become: true
+  become_user: root
+  when: not certfile.stat.exists
+- name: Get private keys
+  ansible.builtin.fetch:
+    src: /etc/beegfs/key.pem
+    dest: ./.generated/
+    flat: true
+  become: true
+  become_user: root
+- name: Get certificate
+  ansible.builtin.fetch:
+    src: /etc/beegfs/cert.pem
+    dest: ./.generated/
+    flat: true
+  become: true
+  become_user: root

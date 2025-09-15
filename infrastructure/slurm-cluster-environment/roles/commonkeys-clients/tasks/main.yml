@@ -1,0 +1,59 @@
+- name: Put private keys
+  ansible.builtin.copy:
+    src: ./.generated/temp_id_ed25519/id_ed25519
+    dest: /home/almalinux/.ssh/id_ed25519
+    mode: "0600"
+- name: Put public keys
+  ansible.builtin.copy:
+    src: ./.generated/temp_id_ed25519/id_ed25519.pub
+    dest: /home/almalinux/.ssh/id_ed25519.pub
+    mode: "0600"
+- name: Add to authorized_keys
+  ansible.builtin.shell: cat /home/almalinux/.ssh/id_ed25519.pub >> /home/almalinux/.ssh/authorized_keys
+- name: Put munge key
+  ansible.builtin.copy:
+    src: ./.generated/munge/munge.key
+    dest: /etc/munge/munge.key
+    owner: munge
+    group: munge
+    mode: 0400
+  become: true
+  become_user: root
+- name: Start munge
+  ansible.builtin.systemd_service:
+    name: munge
+    state: started
+    enabled: true
+  become: true
+  become_user: root
+- name: Auth file
+  ansible.builtin.copy:
+    src: ./.generated/connauthfile
+    dest: /etc/beegfs/conn.auth
+    owner: root
+    group: root
+    mode: 400
+  become: true
+  become_user: root
+- name: ssh config
+  ansible.builtin.copy:
+    src: files/ssh_config
+    dest: /home/almalinux/.ssh/config
+- name: Put private keys
+  ansible.builtin.copy:
+    src: ./.generated/key.pem
+    dest: /etc/beegfs/key.pem
+    mode: "0600"
+    owner: root
+    group: root
+  become: true
+  become_user: root
+- name: Put public keys
+  ansible.builtin.copy:
+    src: ./.generated/cert.pem
+    dest: /etc/beegfs/cert.pem
+    mode: "0600"
+    owner: root
+    group: root
+  become: true
+  become_user: root

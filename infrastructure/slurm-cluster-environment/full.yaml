@@ -1,0 +1,60 @@
+---
+- hosts: all
+  roles:
+  - common
+  - openmpi
+  - nfs-packages
+  - slurm-packages
+  - beegfs-packages
+  - hostfile
+
+- hosts: loginnode
+  roles:
+  - loginnodename
+
+- hosts: mgmtnode
+  roles:
+  - mgmtnodename  
+
+- hosts: workers
+  roles:
+  - workername
+
+# Set up shared keys
+- hosts: loginnode
+  roles: 
+  - commonkeys-server
+- hosts: mgmtnode:workers
+  roles:
+  - commonkeys-clients
+
+# Set up NFS
+- hosts: mgmtnode
+  roles:
+  - nfs-server
+- hosts: loginnode:workers
+  roles: 
+  - nfs-clients
+
+# Set up Slurm
+- hosts: all
+  roles:
+  - slurm-config
+- hosts: mgmtnode
+  roles: 
+  - slurm-controller
+- hosts: workers
+  roles:
+  - slurm-worker
+
+# Set up BeeGFS
+- hosts: mgmtnode
+  roles: 
+  - beegfs-mgmt
+  - beegfs-md 
+- hosts: workers
+  roles:
+  - beegfs-target
+- hosts: loginnode:workers
+  roles:
+  - beegfs-client

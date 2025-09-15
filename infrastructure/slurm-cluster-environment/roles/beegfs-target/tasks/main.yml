@@ -1,0 +1,24 @@
+- name: Clear old targets
+  ansible.builtin.file:
+    path: /beegfs_data
+    state: absent
+  become: true
+  become_user: root
+- name: Create target location
+  ansible.builtin.file:
+    path: /beegfs_data/target
+    state: directory
+  become: true
+  become_user: root
+- name: Configure target
+  ansible.builtin.command:
+    cmd: /opt/beegfs/sbin/beegfs-setup-storage -p /beegfs_data/target -m mgmtnode
+  become: true
+  become_user: root
+- name: start storage
+  ansible.builtin.systemd_service:
+    name: beegfs-storage
+    state: started
+    enabled: true
+  become: true
+  become_user: root
