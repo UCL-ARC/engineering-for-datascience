@@ -1,0 +1,42 @@
+@prefix arcr: <http://arc.ucl.ac.uk/schema/reactions/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix unit: <https://spec.pistoiaalliance.org/idmp/ontology/EXT/Extensions/UnifiedCodeForUnitsOfMeasure/> .
+@prefix chebi: <https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:>.
+@prefix xs: <http://www.w3.org/2001/XMLSchema>.
+        
+[ 
+{% for reaction in reactions: %}
+        arcr:hasReaction [
+          {% for molecule in reaction.reactants(): %}
+          arcr:hasReactant [
+              {% for element in molecule.molecule.elements: %}
+              arcr:hasElementQuantity [
+                  arcr:countedElement [
+                      a chebi:33259;
+                      arcr:symbol "{{element.element.symbol}}"^^xs:string
+                  ] ;
+                  arcr:countOfElement "{{element.number}}"^^xs:integer
+              ];
+              {% endfor %}
+              a chebi:23367
+          ] ;
+          {% endfor %}
+          {% for molecule in reaction.products(): %}
+          arcr:hasProduct [
+              {% for element in molecule.molecule.elements: %}
+              arcr:hasElementQuantity [
+                  arcr:countedElement [
+                      a chebi:33259;
+                      arcr:symbol "{{element.element.symbol}}"^^xs:string
+                  ] ;
+                  arcr:countOfElement "{{element.number}}"^^xs:integer
+              ] ;
+              {% endfor %}
+              a chebi:23367
+          ] ;
+          {% endfor %}
+          a arcr:reaction
+      ] ;
+      {% endfor %}
+    a arcr:system
+  ].

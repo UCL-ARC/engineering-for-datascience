@@ -1,0 +1,4 @@
+@prefix dbo: <https://dbpedia.org/ontology/> .
+@prefix pst: <https://spec.pistoiaalliance.org/idmp/ontology/EXT/Extensions/UnifiedCodeForUnitsOfMeasure/> .
+
+dbo:water dbo:molarMass "18.01528"^^pst:GramsPerMole .

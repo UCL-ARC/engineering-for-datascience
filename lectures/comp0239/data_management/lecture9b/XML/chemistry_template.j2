@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+    {% for reaction in reactions: %}
+    <reaction>
+        <reactants>
+        {%- for molecule in reaction.reactants(): %}
+            <molecule stoichiometry="{{molecule.stoichiometry*(-1)}}">
+                {%- for element in molecule.molecule.elements: %}
+                    <element symbol="{{element.element.symbol}}" number="{{element.number}}"/>
+                {%- endfor %}
+            </molecule>
+        {%- endfor %}
+        </reactants>
+        <products>
+        {%- for molecule in reaction.products(): %}
+            <molecule stoichiometry="{{molecule.stoichiometry}}">
+            {%- for element in molecule.molecule.elements: %}
+                    <element symbol="{{element.element.symbol}}" number="{{element.number}}"/>
+            {%- endfor %}
+            </molecule>
+        {%- endfor %}
+        </products>
+    </reaction>
+    {%- endfor %}
+</system>

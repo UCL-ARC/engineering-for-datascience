@@ -1,0 +1,8 @@
+pyyaml
+h5py
+ord-schema
+numpy
+pysmiles==1.1.2
+SQLAlchemy
+jupyter
+psycopg2-binary
