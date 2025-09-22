@@ -1,0 +1,16 @@
+- name: download data from s3 mirror
+  hosts: all
+  tasks:
+  - name: Make directory
+    ansible.builtin.file:
+      path: /data/almalinux/data
+      state: directory
+  - name: Download 1850-1859 dataset
+    ansible.builtin.get_url:
+      dest: /data/almalinux/data/1850_1859.zip
+      url: https://s3.ds4eng.condenser.arc.ucl.ac.uk/britishlibrary/1850_1859.zip
+  - name: Unpack the archive
+    ansible.builtin.unarchive:
+      remote_src: true
+      src: /data/almalinux/data/1850_1859.zip
+      dest: /data/almalinux/data

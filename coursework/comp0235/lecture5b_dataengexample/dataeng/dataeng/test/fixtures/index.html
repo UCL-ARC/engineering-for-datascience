@@ -1,0 +1,1411 @@
+
+<!-- add body classes to make styling easier -->
+<!DOCTYPE html>
+<html lang="en" prefix="og:http://ogp.me/ns#">
+  <head>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="EffmRIMfT3u8UtcHIe4ebZu0/CYNHkDgV4VwBhm8wjspqmscAhagcH/fYBFcFdAo/hjqC8sZE0WiqyruU3S9sg==" />
+<meta charset="utf-8" />
+<!-- added for use on small devices like phones -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="resourcesync" href="https://bl.iro.bl.uk/capabilitylist?locale=en" />
+
+<!-- Twitter card metadata -->
+
+<!-- Google Scholar metadata -->
+
+
+<title>19th Century Digitised Books Collection //   British Library </title>
+
+<!-- application css -->
+<link rel="stylesheet" media="screen" href="/assets/application-eda2f920ba13fde5274161a72d6d1460dc9f7f14324eb91071a6485165e671ff.css" />
+
+<!-- application js -->
+<script src="/assets/application-d9d2a0f28424956582b74bca379d7865cd30394dc8695482917aee70903ec4c2.js"></script>
+
+<style>
+
+body.public-facing { font-family: Helvetica Neue, Helvetica, Arial, sans-serif; }
+body.public-facing h1,
+body.public-facing h2,
+body.public-facing h3,
+body.public-facing h4,
+body.public-facing h5,
+body.public-facing h6 { font-family: Helvetica Neue, Helvetica, Arial, sans-serif;}
+
+/* LINK COLORS */
+body.public-facing a { color: #38628f; }
+body.public-facing a:hover,
+body.public-facing a:focus { color: #276397; }
+body.public-facing #sort-dropdown .dropdown-toggle,
+body.public-facing #per_page-dropdown .dropdown-toggle { color: #38628f; }
+
+/* MAIN NAV */
+body.public-facing .navbar-inverse .navbar-link { color: #ffebcd; }
+body.public-facing .navbar-inverse .navbar-link:hover { color: #ffffff }
+body.public-facing .navbar-inverse.non-shared-repo.navbar.navbar-static-top,
+body.public-facing .navbar-inverse,
+body.public-facing .navbar-inverse .navbar-nav > .open > a,
+body.public-facing .navbar-inverse .navbar-nav > .open > a:hover,
+body.public-facing .navbar-inverse .navbar-nav > .open > a:focus { background-color: #3c3c3c; }
+body.public-facing .navbar-inverse .navbar-nav > li > a,
+body.public-facing .navbar-inverse .navbar-text,
+body.public-facing .navbar-inverse .navbar-brand { color: #dcdcdc; }
+body.public-facing .navbar-inverse { border-color: #222222; }
+
+/* HOME PAGE SEARCH BAR NAV */
+body.public-facing .image-masthead .navbar { background-color: rgba(0, 0, 0, 0.4); }
+body.public-facing .image-masthead .navbar .active > a,
+body.public-facing .image-masthead .navbar .active > a:hover,
+body.public-facing .image-masthead .navbar .active > a:focus {
+    background-color: #000000;
+    color: #eeeeee;
+}
+body.public-facing .image-masthead .navbar .navbar-nav a {
+    color: #eeeeee;
+}
+
+body.public-facing .image-masthead .navbar .navbar-nav a:hover,
+body.public-facing .image-masthead .navbar .navbar-nav a:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #eeeeee;
+}
+
+/* HOME PAGE NAV-PILL TABS */
+body.public-facing .nav-pills > li.active > a,
+body.public-facing .nav-pills > li.active > a:hover,
+body.public-facing .nav-pills > li.active > a:focus {
+    background-color: #337ab7;
+}
+
+/* PRIMARY BUTTON STYLES */
+body.public-facing .btn-primary {
+  background-color: #286090;
+  border-color: #245682;
+}
+body.public-facing .btn-primary:focus,
+body.public-facing .btn-primary.focus {
+  background-color: #204d75;
+  border-color: #14314a;
+}
+body.public-facing .btn-primary:hover {
+  background-color: #204d75;
+  border-color: #1c4364;
+}
+body.public-facing .btn-primary:active,
+body.public-facing .btn-primary.active {
+  background-color: #286090;
+  border-color: #245682;
+}
+body.public-facing .btn-primary:active:hover,
+body.public-facing .btn-primary:active:focus,
+body.public-facing .btn-primary:active.focus,
+body.public-facing .btn-primary.active:hover,
+body.public-facing .btn-primary.active:focus,
+body.public-facing .btn-primary.active.focus{
+  background-color: #286090;
+  border-color: #245682;
+}
+body.public-facing .btn-primary.disabled:hover,
+body.public-facing .btn-primary.disabled:focus,
+body.public-facing .btn-primary.disabled.focus,
+body.public-facing .btn-primary[disabled]:hover,
+body.public-facing .btn-primary[disabled]:focus,
+body.public-facing .btn-primary[disabled].focus {
+  background-color: #286090;
+  border-color: #245682;
+}
+
+/* DEFAULT BUTTON STYLES */
+body.public-facing .btn-default {
+  background-color: #ffffff;
+  border-color: #cccccc;
+  color: #333333;;
+}
+body.public-facing .btn-default:focus,
+body.public-facing .btn-default.focus {
+  background-color: #cfcfcf;
+  border-color: #737373;
+}
+body.public-facing .btn-default:hover {
+  background-color: #cfcfcf;
+  border-color: #9e9e9e;
+}
+body.public-facing .btn-default:active,
+body.public-facing .btn-default.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+body.public-facing .btn-default:active:hover,
+body.public-facing .btn-default:active:focus,
+body.public-facing .btn-default:active.focus,
+body.public-facing .btn-default.active:hover,
+body.public-facing .btn-default.active:focus,
+body.public-facing .btn-default.active.focus{
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+body.public-facing .btn-default.disabled:hover,
+body.public-facing .btn-default.disabled:focus,
+body.public-facing .btn-default.disabled.focus,
+body.public-facing .btn-default[disabled]:hover,
+body.public-facing .btn-default[disabled]:focus,
+body.public-facing .btn-default[disabled].focus {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+/* FACET PANEL STYLES */
+body.public-facing .panel-default > .panel-heading {
+    color: #333333;
+    background-color: #f5f5f5;
+    border-color: #bebebe;
+}
+body.public-facing .panel-default { border-color: #bebebe; }
+body.public-facing .panel-heading.collapse-toggle .panel-title:after { color: #333333; }
+
+/* custom stylesheet */
+
+</style>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- for extras, e.g., a favicon -->
+ <!-- Google Tag Manager -->
+ <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', "GTM-KXSRB56");
+ </script>
+<!-- End Google Tag Manager -->
+
+ <!-- Google Tag Manager (whole repo) -->
+ <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', "GTM-KXSRB56");
+ </script>
+<!-- End Google Tag Manager -->
+
+<meta name="google-site-verification" content="RAjF6NronQ364qiFp2zVummVMFP4o8_a7PGH4SwGKw8" />
+
+<!-- generics -->
+<link rel="icon" href="/system/favicons/1/v32/BL_favicon_3.png" sizes="32x32">
+<link rel="icon" href="/system/favicons/1/v57/BL_favicon_3.png" sizes="57x57">
+<link rel="icon" href="/system/favicons/1/v76/BL_favicon_3.png" sizes="76x76">
+<link rel="icon" href="/system/favicons/1/v96/BL_favicon_3.png" sizes="96x96">
+<link rel="icon" href="/system/favicons/1/v128/BL_favicon_3.png" sizes="128x128">
+<link rel="icon" href="/system/favicons/1/v128/BL_favicon_3.png" sizes="192x192">
+<link rel="icon" href="/system/favicons/1/v228/BL_favicon_3.png" sizes="228x228">
+
+<!-- Android -->
+<link rel="shortcut icon" href="/system/favicons/1/v196/BL_favicon_3.png" sizes="196x196">
+
+<!-- iOS -->
+<link rel="apple-touch-icon" href="/system/favicons/1/v120/BL_favicon_3.png" sizes="120x120">
+<link rel="apple-touch-icon" href="/system/favicons/1/v152/BL_favicon_3.png" sizes="152x152">
+<link rel="apple-touch-icon" href="/system/favicons/1/v180/BL_favicon_3.png" sizes="180x180">
+
+<!-- Windows 8 IE 10-->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="<%= Site&.favicon&.url(:v228)">
+
+<!— Windows 8.1 + IE11 and above —>
+<meta name="msapplication-config" content="/browserconfig.xml" />
+
+
+    
+  </head>
+
+  <body class="hyrax-collections hyrax-collections-show public-facing bl-public-facing default_home list_view default_show">
+     <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src='https://www.googletagmanager.com/ns.html?id="GTM-KXSRB56"'
+              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) -->
+
+     <!-- Google Tag Manager (noscript) (whole repo) -->
+
+<noscript><iframe src='https://www.googletagmanager.com/ns.html?id="GTM-KXSRB56"'
+              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) -->
+
+    <div class="skip-to-content">
+      <a href="#skip-to-content">Skip to Content</a>
+    </div>
+    
+    <nav id="masthead" class="navbar navbar-inverse navbar-static-top default-color" role="navigation">
+  <div class="container-fluid top-nav-container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <div>
+          <a class="shared-research-repo-button" href="//iro.bl.uk">
+            <span class="fa fa-caret-left"></span> Shared Research Repository
+</a>        </div>
+      <!-- OVERRIDE to remove the logo in the top header bar -->
+    </div>
+
+    <div class="collapse navbar-collapse" id="top-navbar-collapse">
+      <div class= "hidden-md hidden-lg">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" aria-label="Root Menu">
+  <div class="container-fluid">
+    <div class="row">
+      <ul class="nav navbar-nav">
+        <li >
+          <a href="/?locale=en">Home</a>
+        </li>
+        <li >
+          <a href="/about?locale=en">About</a>
+        </li>
+        <li >
+          <a href="/help?locale=en">Help</a>
+        </li>
+        <li >
+          <a href="/contact?locale=en">Contact</a>
+        </li>
+      </ul><!-- /.nav -->
+    </div>
+  </div>
+</nav><!-- /.navbar -->
+      </div>
+        <ul id="user_utility_links" class="nav navbar-nav navbar-right">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="language-dropdown-menu">
+        <span class="sr-only">Switch language</span>
+        <span title="Switch language">English</span>
+        <b class="caret"></b>
+    </a>
+    <ul id="language-dropdown-menu" class="dropdown-menu" role="menu">
+        <li role="presentation" class="dropdown-header">Switch language</li>
+        <li role="presentation" class="divider"></li>
+            <li role="presentation" lang="de">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="de" href="?locale=de">Deutsch</a>
+            </li>
+            <li role="presentation" lang="en">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="en" href="?locale=en">English</a>
+            </li>
+            <li role="presentation" lang="es">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="es" href="?locale=es">Español</a>
+            </li>
+            <li role="presentation" lang="fr">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="fr" href="?locale=fr">Français</a>
+            </li>
+            <li role="presentation" lang="it">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="it" href="?locale=it">Italiano</a>
+            </li>
+            <li role="presentation" lang="pt-BR">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="pt-BR" href="?locale=pt-BR">Português do Brasil</a>
+            </li>
+            <li role="presentation" lang="zh">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="zh" href="?locale=zh">中文</a>
+            </li>
+    </ul>
+</li>
+
+    <li>
+      <a href="/users/sign_in?locale=en">
+        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login
+</a>    </li>
+</ul>
+
+    </div>
+  </div>
+</nav>
+
+
+      
+  <div class="banner-section-wrapper">
+    <div class="pages-nav flex-center">
+      <div class="col-xs-12 col-md-6 hidden-xs hidden-sm flex-center">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" aria-label="Root Menu">
+  <div class="container-fluid">
+    <div class="row">
+      <ul class="nav navbar-nav">
+        <li >
+          <a href="/?locale=en">Home</a>
+        </li>
+        <li >
+          <a href="/about?locale=en">About</a>
+        </li>
+        <li >
+          <a href="/help?locale=en">Help</a>
+        </li>
+        <li >
+          <a href="/contact?locale=en">Contact</a>
+        </li>
+      </ul><!-- /.nav -->
+    </div>
+  </div>
+</nav><!-- /.navbar -->
+      </div>
+      <div class= "col-xs-12 col-md-6 section-contrast flex-center catalog-logo-section">
+              <a id="logo" alt="Visit the   British Library  home page" data-turbolinks_="false" href="https://www.bl.uk">
+    <img src="/system/logo_images/1/original/Copy_of_BL_Logo_jpg.jpg" />
+</a>
+            <h5 class="mt-auto px-10 mw-100">
+              Research Repository
+            </h5>
+      </div>
+    </div>
+    <div class="catalog-page-search pb-40 mx-auto">
+        <div class='hidden-xs'>
+  <form class="form-horizontal search-form" id="search-form-header" role="search" action="/catalog?locale=en" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <input type="hidden" name="sort" value="year_published_isi asc" />
+<input type="hidden" name="per_page" value="20" />
+<input type="hidden" name="locale" value="en" />
+    <input type="hidden" name="search_field" id="search_field" value="all_fields" />
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" name="q" id="search-field-header" class="q form-control search-field-header-large" placeholder="Explore Our Research Repository" />
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-primary" id="search-submit-header">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </div><!-- /.input-group-btn -->
+      </div><!-- /.input-group -->
+
+    </div><!-- /.form-group -->
+</form></div>
+
+<div class='visible-xs-block'>
+  <form class="form-horizontal search-form" id="search-form-header" role="search" action="/catalog?locale=en" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <input type="hidden" name="sort" value="year_published_isi asc" />
+<input type="hidden" name="per_page" value="20" />
+<input type="hidden" name="locale" value="en" />
+    <input type="hidden" name="search_field" id="search_field" value="all_fields" />
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" name="q" id="search-field-header" class="q form-control search-field-header-small" placeholder="Explore" />
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-primary" id="search-submit-header">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </div><!-- /.input-group-btn -->
+      </div><!-- /.input-group -->
+
+    </div><!-- /.form-group -->
+</form></div>
+    </div>
+  </div>
+
+
+
+    
+    <div id="content-wrapper" class="container" role="main">
+        
+      <nav class="breadcrumb" role="region" aria-label="Breadcrumb"><ol><li><a href="/?locale=en">Home</a></li></ol></nav>
+
+        <a name="skip-to-content" id="skip-to-content">
+        </a>
+        <div class="hyc-container" itemscope itemtype="http://schema.org/CollectionPage">
+  <div class="row hyc-header">
+    <div class="col-md-12">
+          <header class="hyc-generic">
+            <div class="hyc-bugs">
+              <div class="hyc-item-count">
+                <b>13</b>
+                Items
+              </div>
+              <div class="hyc-badges">
+                <span class="label" style="background-color: #705070;">User Collection</span>
+                <span class="label label-success">Public</span>
+              </div>
+              <!-- Removing creator from showing because it isn't parsed
+                <div class="hyc-created-by">
+                  Created by: [{&quot;creator_organization_name&quot;:&quot;British Library&quot;,&quot;creator_name_type&quot;:&quot;Organisational&quot;,&quot;creator_isni&quot;:&quot;0000000123081542&quot;,&quot;creator_position&quot;:&quot;0&quot;}]
+                </div>
+               -->
+                <div class="hyc-last-updated">
+                  Last Updated: 2022-05-06
+                </div>
+            </div>
+        </header>
+      </div>
+    </div>
+        <div class="row hyc-body">
+            <div class="col-md-7 hyc-description">
+            <section
+              data-source="my"
+              data-id="b7fd2482-debd-4495-9494-72aa2ead00bb"
+              data-colls-hash="[]"
+              data-post-url="/dashboard/collections/b7fd2482-debd-4495-9494-72aa2ead00bb/within?locale=en"
+              data-post-delete-url="/dashboard/collections/b7fd2482-debd-4495-9494-72aa2ead00bb?locale=en">
+
+                <h1 class="mt-0">19th Century Digitised Books Collection</h1>
+              <div class='show-actions-container'>
+                
+<h2 class="sr-only">Actions</h2>
+
+
+              </div>
+            </section>
+              <div class="pt-20">
+                  <p>In partnership with Microsoft, the British Library has digitised, and made freely available under Public Domain Mark, over 60,000 volumes (around 25 million pages) of out of copyright 18th &amp; 19th century texts. Items within this collection cover a wide range of subject areas including geography, philosophy, history, poetry and literature and are published in a variety of languages.</p>
+
+<p>This collection, sometimes referred to as the Microsoft Books/BL 19th Century collection, and its derived datasets have been made available on various platforms under an open license. </p>
+
+<p>All volumes are available for view, download and full-text search from the British Library Catalogue - <a href="https://explore.bl.uk">https://explore.bl.uk</a> - via the Library’s IIIF standard enabled Universal Viewer. Use the search term “blmsd” in Explore to limit results to this specific collection.</p>
+
+<p>Over 1 million images extracted from the book pages programmatically can be found on British Library’s Flickr: <a href="https://www.flickr.com/photos/britishlibrary/">https://www.flickr.com/photos/britishlibrary/</a>  </p>
+
+<p>The Flickr API can be used to directly download large sets of these images, and other metadata such as user-generated tag information: <a href="https://www.flickr.com/services/developer/">https://www.flickr.com/services/developer/</a></p>
+
+<p>JISC Historic Texts holds a full copy of this collection: <a href="https://www.jisc.ac.uk/historical-texts">https://www.jisc.ac.uk/historical-texts</a></p>
+
+<p>Wikimedia Commons offers a useful introduction to the collection, including a Synoptic Index, as well as projects to georeference maps found in the texts: <a href="https://commons.wikimedia.org/wiki/Commons:British_Library/Mechanical_Curator_collection">https://commons.wikimedia.org/wiki/Commons:British_Library/Mechanical_Curator_collection</a></p>
+
+              </div>
+          </div>
+                <div class="col-md-4 col-md-offset-1">
+                      <div class="hyc-metadata">
+                      <h3 class="mt-0">Collection Details</h3>
+                      <dl>
+      <div>
+        <dt>Total items</dt>
+        <dd>  <span itemprop="total_items" itemscope itemtype="http://schema.org/Thing">
+    13
+  </span>
+  <br />
+</dd>
+      </div>
+      <div>
+        <dt>Resource type</dt>
+        <dd>  <a href="/catalog?f%5Bresource_type_sim%5D%5B%5D=Collection+Dataset&amp;locale=en&amp;per_page=20&amp;sort=year_published_isi+asc">Collection Dataset</a><br />
+</dd>
+      </div>
+      <div>
+        <dt>Creator</dt>
+        <dd>
+<ul class="tabular" style="margin-left:0px; padding-left:0px;">
+    <li class="attribute collection-details-creator ">
+      <span itemprop="creator" style="float:left">
+        British Library
+      </span>
+      <span itemprop="creator">
+          <span style="float:left" >&nbsp;(</span>
+
+
+              <a href='http://www.isni.org/isni/0000000123081542' target="_blank">
+              <img class="img-responsive" alt="ISNI" style="float:left" height="16" width="26" src="/assets/isni-d7693fcd6f049102061e6e7018c466c2978107873741f324ca0ce7c7baf80a31.png" />
+              </a>
+          <span>)</span>
+      </span>
+      <br/>
+    </li>
+</ul>
+</dd>
+      </div>
+      <div>
+        <dt>Publisher</dt>
+        <dd>  <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span itemprop="name"><a href="/catalog?f%5Bpublisher_sim%5D%5B%5D=British+Library&amp;locale=en&amp;per_page=20&amp;sort=year_published_isi+asc">British Library</a></span>
+        </span>
+  <br />
+</dd>
+      </div>
+      <div>
+        <dt>Related URL</dt>
+        <dd>  <div class="related_url">
+    <a href="https://data.bl.uk"><span class="glyphicon glyphicon-new-window"></span> https://data.bl.uk</a>
+  </div>
+  <div class="related_url">
+    <a href="https://www.bl.uk/collection-guides/digitised-printed-books"><span class="glyphicon glyphicon-new-window"></span> https://www.bl.uk/collection-guides/digitised-printed-books</a>
+  </div>
+</dd>
+      </div>
+</dl>
+                    </div>
+                </div>
+              </div>
+              <!-- Search results label -->
+                <div class="hyc-blacklight hyc-bl-title">
+                  <h2>
+                  </h2>
+                </div>
+              <!-- Search bar -->
+                <div class="hyc-bl-search hyc-body row">
+                  <div class="col-sm-7">
+                      <form class="edit_collection" id="edit_collection_b7fd2482-debd-4495-9494-72aa2ead00bb" action="/collections/b7fd2482-debd-4495-9494-72aa2ead00bb?locale=en" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <label class="sr-only">Search Collection 19th Century Digitised Books Collection</label>
+      <div class="input-group">
+        <input type="search" name="cq" id="collection_search" class="collection-query form-control" placeholder="Search subcollections and works in this collection" size="30" />
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-primary" id="collection_submit"><i class="glyphicon glyphicon-search"></i> Go</button>
+        </div>
+      </div>
+      <input type="hidden" name="sort" id="collection_sort" value="year_published_isi asc" />
+      <input type="hidden" name="search_field" id="collection_search_field" value="all_fields" />
+      <input type="hidden" name="per_page" value="20" />
+<input type="hidden" name="locale" value="en" />
+</form>
+                  </div>
+                </div>
+                <!-- Search results count -->
+              <!-- Subcollections -->
+              <!-- Works -->
+                <div class="hyc-blacklight hyc-bl-title">
+                  <h4>Works (13)</h4>
+                </div>
+                <div class="hyc-blacklight hyc-bl-sort">
+                    <form class="per_page form-horizontal" action="/collections/b7fd2482-debd-4495-9494-72aa2ead00bb?locale=en" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <div class="view-type pull-right">
+  <span class="sr-only">View results as: </span>
+  <div class="view-type-group btn-group">
+      <a title="List" class="btn btn-default view-type-list active" href="/collections/b7fd2482-debd-4495-9494-72aa2ead00bb?locale=en&amp;view=list">
+        <span class="glyphicon glyphicon-list view-icon-list"></span>
+        <span class="caption">List</span>
+</a>      <a title="Gallery" class="btn btn-default view-type-gallery " href="/collections/b7fd2482-debd-4495-9494-72aa2ead00bb?locale=en&amp;view=gallery">
+        <span class="glyphicon glyphicon-gallery view-icon-gallery"></span>
+        <span class="caption">Gallery</span>
+</a>      <a title="Masonry" class="btn btn-default view-type-masonry " href="/collections/b7fd2482-debd-4495-9494-72aa2ead00bb?locale=en&amp;view=masonry">
+        <span class="glyphicon glyphicon-masonry view-icon-masonry"></span>
+        <span class="caption">Masonry</span>
+</a>      <a title="Slideshow" class="btn btn-default view-type-slideshow " href="/collections/b7fd2482-debd-4495-9494-72aa2ead00bb?locale=en&amp;view=slideshow">
+        <span class="glyphicon glyphicon-slideshow view-icon-slideshow"></span>
+        <span class="caption">Slideshow</span>
+</a>  </div>
+</div>
+
+    <fieldset class="pull-left">
+      <legend class="sr-only">Sort the listing of items</legend>
+      <label for="sort"><span>Sort by:</span></label>
+      <select name="sort" id="sort"><option value="score desc, system_create_dtsi desc">relevance</option>
+<option value="system_create_dtsi desc">date uploaded ↓</option>
+<option value="system_create_dtsi asc">date uploaded ↑</option>
+<option value="system_modified_dtsi desc">date modified ↓</option>
+<option value="system_modified_dtsi asc">date modified ↑</option>
+<option value="year_published_isi desc">year published ↓</option>
+<option selected="selected" value="year_published_isi asc">year published ↑</option></select>
+      <label for="per_page">
+        <span class="tiny-nudge">Results per page:</span>
+        <select name="per_page" id="per_page" title="Number of results to display per page"><option value="10">10</option>
+<option selected="selected" value="20">20</option>
+<option value="50">50</option>
+<option value="100">100</option></select>
+</label>      <input type="hidden" name="locale" value="en" />
+      &nbsp;<button class="btn btn-xs btn-default tiny-nudge"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+    </fieldset>
+</form>
+                </div>
+                <div class="hyc-blacklight hyc-bl-results">
+                      <table class="table table-striped">
+  <caption class="sr-only">List of items in this collection</caption>
+  <thead>
+  <tr>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+    <th>Title</th>
+        <th>Creator</th>
+    <th>Year Published</th>
+    <th>Date Added</th>
+    <th>Visibility</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr id="document_e0e7b9c8-1d83-4275-afa4-51b255d695a3">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/e0e7b9c8-1d83-4275-afa4-51b255d695a3?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_linke0e7b9c8-1d83-4275-afa4-51b255d695a3" class="" href="/concern/datasets/e0e7b9c8-1d83-4275-afa4-51b255d695a3?locale=en">OCR text derived from digitised books published 1890 - 1899 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-29
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_ea8c2fb7-98eb-4d31-84a8-b3957f1809ff">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/ea8c2fb7-98eb-4d31-84a8-b3957f1809ff?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_linkea8c2fb7-98eb-4d31-84a8-b3957f1809ff" class="" href="/concern/datasets/ea8c2fb7-98eb-4d31-84a8-b3957f1809ff?locale=en">OCR text derived from digitised books published 1870 - 1879 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-20
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_6788c6af-ff0d-49d6-b193-bf8f8de6b66a">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/6788c6af-ff0d-49d6-b193-bf8f8de6b66a?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_link6788c6af-ff0d-49d6-b193-bf8f8de6b66a" class="" href="/concern/datasets/6788c6af-ff0d-49d6-b193-bf8f8de6b66a?locale=en">OCR text derived from digitised books published 1850 - 1859 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-20
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_7792e509-530e-48d3-80b5-1b66e050ffae">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/7792e509-530e-48d3-80b5-1b66e050ffae?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_link7792e509-530e-48d3-80b5-1b66e050ffae" class="" href="/concern/datasets/7792e509-530e-48d3-80b5-1b66e050ffae?locale=en">OCR text derived from digitised books published 1860 - 1869 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-20
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_fd58d311-6776-4509-940d-15aac413967d">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/fd58d311-6776-4509-940d-15aac413967d?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_linkfd58d311-6776-4509-940d-15aac413967d" class="" href="/concern/datasets/fd58d311-6776-4509-940d-15aac413967d?locale=en">OCR text derived from digitised books published 1880 - 1889 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-20
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_9c61d6f0-ce7e-48f3-88eb-65133d3b7376">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/9c61d6f0-ce7e-48f3-88eb-65133d3b7376?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_link9c61d6f0-ce7e-48f3-88eb-65133d3b7376" class="" href="/concern/datasets/9c61d6f0-ce7e-48f3-88eb-65133d3b7376?locale=en">OCR text derived from digitised books published 1830 - 1839 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-18
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_f66d2ec2-0e54-4eb2-8f1d-5a0482eb5136">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/f66d2ec2-0e54-4eb2-8f1d-5a0482eb5136?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_linkf66d2ec2-0e54-4eb2-8f1d-5a0482eb5136" class="" href="/concern/datasets/f66d2ec2-0e54-4eb2-8f1d-5a0482eb5136?locale=en">OCR text derived from digitised books published 1810 - 1819 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-18
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_6e070a10-8439-4651-8db0-e7cc8e12f2c3">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/6e070a10-8439-4651-8db0-e7cc8e12f2c3?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_link6e070a10-8439-4651-8db0-e7cc8e12f2c3" class="" href="/concern/datasets/6e070a10-8439-4651-8db0-e7cc8e12f2c3?locale=en">OCR text derived from digitised books published 1820 - 1829 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-18
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_0d5ba81a-ed8c-4d54-b84a-f1f178fe549e">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/0d5ba81a-ed8c-4d54-b84a-f1f178fe549e?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_link0d5ba81a-ed8c-4d54-b84a-f1f178fe549e" class="" href="/concern/datasets/0d5ba81a-ed8c-4d54-b84a-f1f178fe549e?locale=en">OCR text derived from digitised books published 1700 - 1799 in ALTO XML.</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-18
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_99bcb05b-1106-49cc-8d93-67329867991a">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/99bcb05b-1106-49cc-8d93-67329867991a?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_link99bcb05b-1106-49cc-8d93-67329867991a" class="" href="/concern/datasets/99bcb05b-1106-49cc-8d93-67329867991a?locale=en">OCR text derived from digitised books published 1800 - 1809 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-18
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_52c10546-2d70-4ef0-aa05-7454d7e1b071">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/52c10546-2d70-4ef0-aa05-7454d7e1b071?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_link52c10546-2d70-4ef0-aa05-7454d7e1b071" class="" href="/concern/datasets/52c10546-2d70-4ef0-aa05-7454d7e1b071?locale=en">OCR text derived from digitised books published c. 1510 - 1699 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-18
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_1d3be2ef-c693-45b6-b7b9-7d7dffea9e0c">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/1d3be2ef-c693-45b6-b7b9-7d7dffea9e0c?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_link1d3be2ef-c693-45b6-b7b9-7d7dffea9e0c" class="" href="/concern/datasets/1d3be2ef-c693-45b6-b7b9-7d7dffea9e0c?locale=en">OCR text derived from digitised books published 1840 - 1849 in ALTO XML</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2014
+  </td>
+  <td class="text-center">
+    2018-12-18
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+<tr id="document_5095eccb-0e3f-4a86-b31a-f111b0691e7b">
+  <td>&nbsp;
+  </td>
+  <td class="text-center">
+    <div class="media">
+      <a href="/concern/datasets/5095eccb-0e3f-4a86-b31a-f111b0691e7b?locale=en">
+        <img class="hidden-xs file_listing_thumbnail" src="/assets/work-e6f2257952f420732b9e748a9780a6d3291aed4125fabd340ac74fe813f347bd.png" />
+</a>    </div>
+  </td>
+  <td class="media-body">
+    <h6 class="search-result-worktype">
+      Dataset
+    </h6>
+    <h4 class="search-result-title">
+      <a id="src_copy_link5095eccb-0e3f-4a86-b31a-f111b0691e7b" class="" href="/concern/datasets/5095eccb-0e3f-4a86-b31a-f111b0691e7b?locale=en">OCR text derived from digitised books published 1900 - c. 1946. ALTO XML.</a>
+    </h4>
+  </td>
+  <td class="media-body">
+    <span class='creator-search-results'>
+      <small>
+        <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+              <span itemprop='creator'>
+          <span>
+          </span>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library&amp;locale=en">
+                  British Library
+                  ;
+                    &nbsp;
+                  
+</a>          </span>
+    </span>
+    <span itemprop='creator'>
+          <span>
+              <a class="creator-search-results" href="/catalog?f%5Bcreator_search_sim%5D%5B%5D=British+Library+Labs&amp;locale=en">
+                  British Library Labs
+                  
+                  
+</a>          </span>
+          <span>
+          </span>
+    </span>
+ 
+</a>      </small>
+    </span>
+  </td>
+  <td class="text-center">
+    2016
+  </td>
+  <td class="text-center">
+    2021-03-08
+  </td>
+  <td class="text-center">
+    <span class="label label-success">Public</span>
+  </td>
+</tr>
+
+  </tbody>
+</table>
+
+                </div>
+                <div class="hyc-blacklight hyc-bl-pager">
+                  
+                </div>
+            </div>
+
+
+    </div>
+    <!-- /#content-wrapper -->
+    <footer class="navbar navbar-inverse site-footer">
+  <div class="container-fluid">
+    <div class="navbar-text">
+      <!-- /begin nav links: OVERRIDE here to include nav links on bottom bar -->
+      <div class="row">
+          <div class = 'col-xs-6 col-md-2 footer-link' >
+            <a href="/?locale=en">Home</a>
+          </div>
+          <div class = 'col-xs-6 col-md-2 footer-link' >
+            <a href="/about?locale=en">About</a>
+          </div>
+          <div class = 'col-xs-6 col-md-2 footer-link' >
+            <a href="/help?locale=en">Help</a>
+          </div>
+          <div class = 'col-xs-6 col-md-2 footer-link' >
+            <a href="/contact?locale=en">Contact</a>
+          </div>
+          <div class = 'col-xs-12 col-md-4 footer-link'>
+          <a href="/terms?locale=en">Terms of Use</a>
+          </div>
+      </div><!-- /.nav -->
+    </div>
+    <div class="navbar-right">
+      <div class="navbar-text text-right footer-link">
+        Managed by the <a href="https://www.bl.uk/">British Library</a>
+        <br/>Provided by <a href="https://softserv.scientist.com/">Software Services by Scientist.com</a> & <a href="https://cosector.com/">CoSector</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <div id="ajax-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>
+

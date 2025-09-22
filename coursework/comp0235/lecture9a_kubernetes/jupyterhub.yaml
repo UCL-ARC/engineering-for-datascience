@@ -1,0 +1,17 @@
+hub:
+  config:
+    Authenticator:
+      admin_users:
+        - admin
+      allowed_users:
+        - user
+    DummyAuthenticator:
+      password: ReplaceWithRealPassword
+    JupyterHub:
+      authenticator_class: dummy
+proxy:
+  service:
+    type: ClusterIP
+ingress:
+  enabled: true
+  ingressClassName: "traefik"

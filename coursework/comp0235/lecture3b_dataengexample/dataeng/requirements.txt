@@ -1,0 +1,4 @@
+beautifulsoup4==4.12.2
+mr4mp==2.7.1
+psycopg2-binary
+requests

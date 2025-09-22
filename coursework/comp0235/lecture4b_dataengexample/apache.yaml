@@ -1,0 +1,50 @@
+- name: Set up apache on host
+  hosts: mgmtnode
+  become: true
+  become_user: root
+  tasks:
+  - name: Create data directory
+    ansible.builtin.file:
+      path: /data
+      state: directory
+  - name: Create data directory
+    ansible.builtin.file:
+      path: /data/almalinux
+      state: directory
+      owner: almalinux
+      group: almalinux
+      mode: 0755
+  - name: Create data directory
+    ansible.builtin.file:
+      path: /data/almalinux/data
+      state: directory
+      owner: almalinux
+      group: almalinux
+      mode: 0755
+  - name: sym link in home directory
+    ansible.builtin.file:
+      path: /home/almalinux/data
+      src: /data/almalinux/data
+      state: link
+  - name: Install web server packages
+    ansible.builtin.dnf:
+      name: 
+        - python3
+        - python3-pip
+        - unzip
+        - wget
+        - httpd
+      state: latest
+  - name: Set up the web server to serve from ~/data
+    ansible.builtin.copy:
+      src: cluster_apache.conf
+      dest: /etc/httpd/conf.d/data.conf
+  - name: Set SELinux Context
+    ansible.builtin.shell: 'semanage fcontext -a -t httpd_sys_content_t "/data/almalinux/data(/.*)?"'
+  - name: Apply policies
+    ansible.builtin.shell: 'restorecon -Rv /data/almalinux/data'
+  - name: Start service httpd
+    ansible.builtin.service:
+      name: httpd
+      state: restarted
+      enabled: true

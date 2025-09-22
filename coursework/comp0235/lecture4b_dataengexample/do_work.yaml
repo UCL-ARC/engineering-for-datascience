@@ -1,0 +1,30 @@
+- name: Do the actual work on the workers
+  hosts: workers
+  tasks:
+  - name: Tell each worker its rank and the number of workers
+    ansible.builtin.set_fact:
+      rank: "{{lookup('ansible.utils.index_of', groups['workers'], 'eq', inventory_hostname)}}"
+      size: "{{groups['workers'] | length}}"
+  - name: Create a data directory
+    ansible.builtin.file:
+      path: /home/almalinux/data
+      state: directory
+  - name: Download the manifest to each client
+    ansible.builtin.get_url:
+      url: "http://{{groups['mgmtnode'][0]}}/data/manifest.txt"
+      dest: /home/almalinux/data/manifest.txt
+  - name: Create a partial manifest on each client
+    ansible.builtin.shell: "awk '!((NR+{{rank}}) %{{size}})' data/manifest.txt > data/manifest_local.txt"
+  - name: fetch the data for this node
+    ansible.builtin.shell: |
+      cd data
+      mkdir -p local_corpus
+      cd local_corpus
+      cat ../manifest_local.txt | xargs -n1 wget -N
+  - name: run the analysis
+    ansible.builtin.shell:  "time /home/almalinux/comp-235-lect-4/bin/python3 -c 'from dataeng.analysis import analysis_entry as main;main()' /home/almalinux/data/local_corpus arms --parallel > result_{{rank}}_{{size}}.json"
+  - name: bring the files back
+    ansible.builtin.fetch:
+      dest: .output/
+      flat: true
+      src: "/home/almalinux/result_{{rank}}_{{size}}.json"

@@ -1,0 +1,20 @@
+- name: download data from s3 mirror
+  hosts: mgmtnode
+  tasks:
+  - name: Make directory
+    ansible.builtin.file:
+      path: /data/almalinux/data
+      state: directory
+  - name: Download 1810-1819 dataset
+    ansible.builtin.get_url:
+      dest: /data/almalinux/data/1810_1819.zip
+      url: https://s3.ds4eng.condenser.arc.ucl.ac.uk/britishlibrary/1810_1819.zip
+  - name: Unpack the archive
+    ansible.builtin.unarchive:
+      remote_src: true
+      src: /data/almalinux/data/1810_1819.zip
+      dest: /data/almalinux/data
+  - name: create the manifest file
+    ansible.builtin.shell:
+      chdir: data
+      cmd: 'ls 1810_1819 | awk ''{print "http://{{inventory_hostname}}/data/1810_1819/" $0}'' > manifest.txt'

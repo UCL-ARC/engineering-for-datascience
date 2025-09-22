@@ -1,0 +1,5 @@
+- name: Add SSH key for almalinux user
+  ansible.posix.authorized_key:
+    user: almalinux
+    state: present
+    key: "{{ lookup('file', 'new_key.pub') }}"

@@ -1,0 +1,967 @@
+
+<!-- add body classes to make styling easier -->
+<!DOCTYPE html>
+<html lang="en" prefix="og:http://ogp.me/ns#">
+  <head>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="JMhN87Hv4PIgRKtjTdMFBu93lK2h+M/rUCRoWQ0b6JqgDM15HOu8W9nGF8srJz+cl2w0ETKXTJzSxjN81SULgw==" />
+<meta charset="utf-8" />
+<!-- added for use on small devices like phones -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="resourcesync" href="https://bl.iro.bl.uk/capabilitylist?locale=en" />
+
+<!-- Twitter card metadata -->
+  <meta name="twitter:card" content="product" />
+  <meta name="twitter:site" content="@HydraInABox" />
+  <meta name="twitter:creator" content="@HydraInABox" />
+  <meta property="og:site_name" content="  British Library " />
+  <meta property="og:type" content="object" />
+  <meta property="og:title" content="OCR text derived from digitised books published 1890 - 1899 in ALTO XML" />
+  <meta property="og:description" content="OCR text derived from digitised books published 1890 - 1899 in ALTO XML" />
+  <meta property="og:image" content="http://bl.iro.bl.uk/downloads/135c0882-1e09-4d0a-8d88-a8ac41066b10" />
+  <meta property="og:url" content="https://bl.iro.bl.uk/concern/datasets/e0e7b9c8-1d83-4275-afa4-51b255d695a3?locale=en" />
+  <meta name="twitter:data1" content="XML, books, digitised, metadata, Microsoft, nineteenth century, ALTO" />
+  <meta name="twitter:label1" content="Keywords" />
+  <meta name="twitter:data2" content="" />
+  <meta name="twitter:label2" content="Rights Statement" />
+
+<!-- Google Scholar metadata -->
+  <meta name="citation_title" content="OCR text derived from digitised books published 1890 - 1899 in ALTO XML" />
+    <meta name="citation_author" content="British Library" />
+    <meta name="citation_author" content="British Library Labs" />
+  <meta name="citation_publication_date" content="[&quot;2014&quot;]" />
+  <meta name="citation_pdf_url" content="http://bl.iro.bl.uk/downloads/135c0882-1e09-4d0a-8d88-a8ac41066b10" />
+  <meta name="description" content="This set consists 14847 volumes, published between 1890-1899. The dataset comprises text from the collection of digitised books created using Optical Character Recognition (OCR) technology. The books cover a wide range of subject areas including philosophy, history, poetry and literature. The dataset is in Analysed Layout and Text Object (ALTO) Extensible Markup Language (XML) format." />
+    <meta name="citation_abstract" content="This set consists 14847 volumes, published between 1890-1899. The dataset comprises text from the collection of digitised books created using Optical Character Recognition (OCR) technology. The books cover a wide range of subject areas including philosophy, history, poetry and literature. The dataset is in Analysed Layout and Text Object (ALTO) Extensible Markup Language (XML) format." />
+      <meta name="citation_keywords" content="XML" />
+      <meta name="citation_keywords" content="books" />
+      <meta name="citation_keywords" content="digitised" />
+      <meta name="citation_keywords" content="metadata" />
+      <meta name="citation_keywords" content="Microsoft" />
+      <meta name="citation_keywords" content="nineteenth century" />
+      <meta name="citation_keywords" content="ALTO" />
+    <meta name="citation_publisher" content="British Library" />
+    <meta name="citation_doi" content="[&quot;doi.org/10.21250/db12&quot;]"/>
+    <meta name="citation_date" content="2014"/>
+
+
+<title>Dataset | OCR text derived from digitised books published 1890 - 1899 in ALTO XML | ID: e0e7b9c8-1d83-4275-afa4-51b255d695a3 | Hyku</title>
+
+<!-- application css -->
+<link rel="stylesheet" media="screen" href="/assets/application-eda2f920ba13fde5274161a72d6d1460dc9f7f14324eb91071a6485165e671ff.css" />
+
+<!-- application js -->
+<script src="/assets/application-d9d2a0f28424956582b74bca379d7865cd30394dc8695482917aee70903ec4c2.js"></script>
+
+<style>
+
+body.public-facing { font-family: Helvetica Neue, Helvetica, Arial, sans-serif; }
+body.public-facing h1,
+body.public-facing h2,
+body.public-facing h3,
+body.public-facing h4,
+body.public-facing h5,
+body.public-facing h6 { font-family: Helvetica Neue, Helvetica, Arial, sans-serif;}
+
+/* LINK COLORS */
+body.public-facing a { color: #38628f; }
+body.public-facing a:hover,
+body.public-facing a:focus { color: #276397; }
+body.public-facing #sort-dropdown .dropdown-toggle,
+body.public-facing #per_page-dropdown .dropdown-toggle { color: #38628f; }
+
+/* MAIN NAV */
+body.public-facing .navbar-inverse .navbar-link { color: #ffebcd; }
+body.public-facing .navbar-inverse .navbar-link:hover { color: #ffffff }
+body.public-facing .navbar-inverse.non-shared-repo.navbar.navbar-static-top,
+body.public-facing .navbar-inverse,
+body.public-facing .navbar-inverse .navbar-nav > .open > a,
+body.public-facing .navbar-inverse .navbar-nav > .open > a:hover,
+body.public-facing .navbar-inverse .navbar-nav > .open > a:focus { background-color: #3c3c3c; }
+body.public-facing .navbar-inverse .navbar-nav > li > a,
+body.public-facing .navbar-inverse .navbar-text,
+body.public-facing .navbar-inverse .navbar-brand { color: #dcdcdc; }
+body.public-facing .navbar-inverse { border-color: #222222; }
+
+/* HOME PAGE SEARCH BAR NAV */
+body.public-facing .image-masthead .navbar { background-color: rgba(0, 0, 0, 0.4); }
+body.public-facing .image-masthead .navbar .active > a,
+body.public-facing .image-masthead .navbar .active > a:hover,
+body.public-facing .image-masthead .navbar .active > a:focus {
+    background-color: #000000;
+    color: #eeeeee;
+}
+body.public-facing .image-masthead .navbar .navbar-nav a {
+    color: #eeeeee;
+}
+
+body.public-facing .image-masthead .navbar .navbar-nav a:hover,
+body.public-facing .image-masthead .navbar .navbar-nav a:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #eeeeee;
+}
+
+/* HOME PAGE NAV-PILL TABS */
+body.public-facing .nav-pills > li.active > a,
+body.public-facing .nav-pills > li.active > a:hover,
+body.public-facing .nav-pills > li.active > a:focus {
+    background-color: #337ab7;
+}
+
+/* PRIMARY BUTTON STYLES */
+body.public-facing .btn-primary {
+  background-color: #286090;
+  border-color: #245682;
+}
+body.public-facing .btn-primary:focus,
+body.public-facing .btn-primary.focus {
+  background-color: #204d75;
+  border-color: #14314a;
+}
+body.public-facing .btn-primary:hover {
+  background-color: #204d75;
+  border-color: #1c4364;
+}
+body.public-facing .btn-primary:active,
+body.public-facing .btn-primary.active {
+  background-color: #286090;
+  border-color: #245682;
+}
+body.public-facing .btn-primary:active:hover,
+body.public-facing .btn-primary:active:focus,
+body.public-facing .btn-primary:active.focus,
+body.public-facing .btn-primary.active:hover,
+body.public-facing .btn-primary.active:focus,
+body.public-facing .btn-primary.active.focus{
+  background-color: #286090;
+  border-color: #245682;
+}
+body.public-facing .btn-primary.disabled:hover,
+body.public-facing .btn-primary.disabled:focus,
+body.public-facing .btn-primary.disabled.focus,
+body.public-facing .btn-primary[disabled]:hover,
+body.public-facing .btn-primary[disabled]:focus,
+body.public-facing .btn-primary[disabled].focus {
+  background-color: #286090;
+  border-color: #245682;
+}
+
+/* DEFAULT BUTTON STYLES */
+body.public-facing .btn-default {
+  background-color: #ffffff;
+  border-color: #cccccc;
+  color: #333333;;
+}
+body.public-facing .btn-default:focus,
+body.public-facing .btn-default.focus {
+  background-color: #cfcfcf;
+  border-color: #737373;
+}
+body.public-facing .btn-default:hover {
+  background-color: #cfcfcf;
+  border-color: #9e9e9e;
+}
+body.public-facing .btn-default:active,
+body.public-facing .btn-default.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+body.public-facing .btn-default:active:hover,
+body.public-facing .btn-default:active:focus,
+body.public-facing .btn-default:active.focus,
+body.public-facing .btn-default.active:hover,
+body.public-facing .btn-default.active:focus,
+body.public-facing .btn-default.active.focus{
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+body.public-facing .btn-default.disabled:hover,
+body.public-facing .btn-default.disabled:focus,
+body.public-facing .btn-default.disabled.focus,
+body.public-facing .btn-default[disabled]:hover,
+body.public-facing .btn-default[disabled]:focus,
+body.public-facing .btn-default[disabled].focus {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+
+/* FACET PANEL STYLES */
+body.public-facing .panel-default > .panel-heading {
+    color: #333333;
+    background-color: #f5f5f5;
+    border-color: #bebebe;
+}
+body.public-facing .panel-default { border-color: #bebebe; }
+body.public-facing .panel-heading.collapse-toggle .panel-title:after { color: #333333; }
+
+/* custom stylesheet */
+
+</style>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!-- for extras, e.g., a favicon -->
+ <!-- Google Tag Manager -->
+ <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', "GTM-KXSRB56");
+ </script>
+<!-- End Google Tag Manager -->
+
+ <!-- Google Tag Manager (whole repo) -->
+ <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', "GTM-KXSRB56");
+ </script>
+<!-- End Google Tag Manager -->
+
+<meta name="google-site-verification" content="RAjF6NronQ364qiFp2zVummVMFP4o8_a7PGH4SwGKw8" />
+
+<!-- generics -->
+<link rel="icon" href="/system/favicons/1/v32/BL_favicon_3.png" sizes="32x32">
+<link rel="icon" href="/system/favicons/1/v57/BL_favicon_3.png" sizes="57x57">
+<link rel="icon" href="/system/favicons/1/v76/BL_favicon_3.png" sizes="76x76">
+<link rel="icon" href="/system/favicons/1/v96/BL_favicon_3.png" sizes="96x96">
+<link rel="icon" href="/system/favicons/1/v128/BL_favicon_3.png" sizes="128x128">
+<link rel="icon" href="/system/favicons/1/v128/BL_favicon_3.png" sizes="192x192">
+<link rel="icon" href="/system/favicons/1/v228/BL_favicon_3.png" sizes="228x228">
+
+<!-- Android -->
+<link rel="shortcut icon" href="/system/favicons/1/v196/BL_favicon_3.png" sizes="196x196">
+
+<!-- iOS -->
+<link rel="apple-touch-icon" href="/system/favicons/1/v120/BL_favicon_3.png" sizes="120x120">
+<link rel="apple-touch-icon" href="/system/favicons/1/v152/BL_favicon_3.png" sizes="152x152">
+<link rel="apple-touch-icon" href="/system/favicons/1/v180/BL_favicon_3.png" sizes="180x180">
+
+<!-- Windows 8 IE 10-->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="<%= Site&.favicon&.url(:v228)">
+
+<!— Windows 8.1 + IE11 and above —>
+<meta name="msapplication-config" content="/browserconfig.xml" />
+
+
+    
+  </head>
+
+  <body class="hyrax-datasets hyrax-datasets-show works-show public-facing bl-public-facing default_home list_view default_show">
+     <!-- Google Tag Manager (noscript) -->
+
+<noscript><iframe src='https://www.googletagmanager.com/ns.html?id="GTM-KXSRB56"'
+              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) -->
+
+     <!-- Google Tag Manager (noscript) (whole repo) -->
+
+<noscript><iframe src='https://www.googletagmanager.com/ns.html?id="GTM-KXSRB56"'
+              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- End Google Tag Manager (noscript) -->
+
+    <div class="skip-to-content">
+      <a href="#skip-to-content">Skip to Content</a>
+    </div>
+    
+    <nav id="masthead" class="navbar navbar-inverse navbar-static-top default-color" role="navigation">
+  <div class="container-fluid top-nav-container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <div>
+          <a class="shared-research-repo-button" href="//iro.bl.uk">
+            <span class="fa fa-caret-left"></span> Shared Research Repository
+</a>        </div>
+      <!-- OVERRIDE to remove the logo in the top header bar -->
+    </div>
+
+    <div class="collapse navbar-collapse" id="top-navbar-collapse">
+      <div class= "hidden-md hidden-lg">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" aria-label="Root Menu">
+  <div class="container-fluid">
+    <div class="row">
+      <ul class="nav navbar-nav">
+        <li >
+          <a href="/?locale=en">Home</a>
+        </li>
+        <li >
+          <a href="/about?locale=en">About</a>
+        </li>
+        <li >
+          <a href="/help?locale=en">Help</a>
+        </li>
+        <li >
+          <a href="/contact?locale=en">Contact</a>
+        </li>
+      </ul><!-- /.nav -->
+    </div>
+  </div>
+</nav><!-- /.navbar -->
+      </div>
+        <ul id="user_utility_links" class="nav navbar-nav navbar-right">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="language-dropdown-menu">
+        <span class="sr-only">Switch language</span>
+        <span title="Switch language">English</span>
+        <b class="caret"></b>
+    </a>
+    <ul id="language-dropdown-menu" class="dropdown-menu" role="menu">
+        <li role="presentation" class="dropdown-header">Switch language</li>
+        <li role="presentation" class="divider"></li>
+            <li role="presentation" lang="de">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="de" href="?locale=de">Deutsch</a>
+            </li>
+            <li role="presentation" lang="en">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="en" href="?locale=en">English</a>
+            </li>
+            <li role="presentation" lang="es">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="es" href="?locale=es">Español</a>
+            </li>
+            <li role="presentation" lang="fr">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="fr" href="?locale=fr">Français</a>
+            </li>
+            <li role="presentation" lang="it">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="it" href="?locale=it">Italiano</a>
+            </li>
+            <li role="presentation" lang="pt-BR">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="pt-BR" href="?locale=pt-BR">Português do Brasil</a>
+            </li>
+            <li role="presentation" lang="zh">
+                <a class="dropdown-item" role="menuitem" tabindex="-1" data-locale="zh" href="?locale=zh">中文</a>
+            </li>
+    </ul>
+</li>
+
+    <li>
+      <a href="/users/sign_in?locale=en">
+        <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login
+</a>    </li>
+</ul>
+
+    </div>
+  </div>
+</nav>
+
+
+      
+  <div class="banner-section-wrapper">
+    <div class="pages-nav flex-center">
+      <div class="col-xs-12 col-md-6 hidden-xs hidden-sm flex-center">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" aria-label="Root Menu">
+  <div class="container-fluid">
+    <div class="row">
+      <ul class="nav navbar-nav">
+        <li >
+          <a href="/?locale=en">Home</a>
+        </li>
+        <li >
+          <a href="/about?locale=en">About</a>
+        </li>
+        <li >
+          <a href="/help?locale=en">Help</a>
+        </li>
+        <li >
+          <a href="/contact?locale=en">Contact</a>
+        </li>
+      </ul><!-- /.nav -->
+    </div>
+  </div>
+</nav><!-- /.navbar -->
+      </div>
+      <div class= "col-xs-12 col-md-6 section-contrast flex-center catalog-logo-section">
+              <a id="logo" alt="Visit the   British Library  home page" data-turbolinks_="false" href="https://www.bl.uk">
+    <img src="/system/logo_images/1/original/Copy_of_BL_Logo_jpg.jpg" />
+</a>
+            <h5 class="mt-auto px-10 mw-100">
+              Research Repository
+            </h5>
+      </div>
+    </div>
+    <div class="catalog-page-search pb-40 mx-auto">
+        <div class='hidden-xs'>
+  <form class="form-horizontal search-form" id="search-form-header" role="search" action="/catalog?locale=en" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <input type="hidden" name="locale" value="en" />
+    <input type="hidden" name="search_field" id="search_field" value="all_fields" />
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" name="q" id="search-field-header" class="q form-control search-field-header-large" placeholder="Explore Our Research Repository" />
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-primary" id="search-submit-header">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </div><!-- /.input-group-btn -->
+      </div><!-- /.input-group -->
+
+    </div><!-- /.form-group -->
+</form></div>
+
+<div class='visible-xs-block'>
+  <form class="form-horizontal search-form" id="search-form-header" role="search" action="/catalog?locale=en" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+    <input type="hidden" name="locale" value="en" />
+    <input type="hidden" name="search_field" id="search_field" value="all_fields" />
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" name="q" id="search-field-header" class="q form-control search-field-header-small" placeholder="Explore" />
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-primary" id="search-submit-header">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </div><!-- /.input-group-btn -->
+      </div><!-- /.input-group -->
+
+    </div><!-- /.form-group -->
+</form></div>
+    </div>
+  </div>
+
+
+
+    
+    <div id="content-wrapper" class="container" role="main">
+        
+      <nav class="breadcrumb" role="region" aria-label="Breadcrumb"><ol><li><a href="/?locale=en">Home</a></li></ol></nav>
+
+        <a name="skip-to-content" id="skip-to-content">
+        </a>
+        
+
+
+
+
+
+<div class="row pt-40">
+  <div itemscope itemtype="http://schema.org/CreativeWork" class="col-xs-12">
+    <div>
+      
+<h6 class="work-type-tag">
+  <span class="fa fa-file-text-o" aria-hidden="true"></span>
+  Dataset
+</h6>
+
+      
+  <div>
+      <div class="row">
+        <div class="col-sm-10 work-title">
+          <h1>OCR text derived from digitised books published 1890 - 1899 in ALTO XML</h1>
+        </div>
+        <div class="col-sm-2 permission-badges">
+          <h3>
+            <small class="text-muted"><span class="label label-success">Public</span> <span class="state state-deposited label label-primary">Deposited</span></small>
+          </h3>
+        </div>
+      </div>
+      <div class="creator-work-show-header row">
+        <div class="col-sm-10">
+          <!-- rendered from views/hyrax/base///attribute_rows_custom.html.erb -->
+
+  <dt>Creator</dt>
+<dd>
+  <ul class="tabular">
+      <li class="attribute header-creator ">
+        <span itemprop="creator" style="float:left">
+          British Library
+        </span>
+        <span itemprop="creator">
+            <span style="float:left" >&nbsp;(</span>
+
+
+                <a href='http://www.isni.org/isni/0000000123081542' target="_blank">
+                <img class="img-responsive" alt="ISNI" style="float:left" height="16" width="26" src="/assets/isni-d7693fcd6f049102061e6e7018c466c2978107873741f324ca0ce7c7baf80a31.png" />
+                </a>
+            <span>)</span>
+        </span>
+        <br/>
+      </li>
+      <li class="attribute header-creator ">
+        <span itemprop="creator" style="float:left">
+          British Library Labs
+        </span>
+        <span itemprop="creator">
+        </span>
+        <br/>
+      </li>
+  </ul>
+</dd>
+
+ 
+
+        </div>
+      </div>
+      <div class="year-published">
+          <h5>2014</h5>
+      </div>
+      
+<div class="show-actions">
+</div>
+
+<!-- COinS hook for Zotero -->
+  <span class="Z3988" title="url_ver=Z39.88-2004&amp;ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rfr_id=info%3Asid%2Fblacklight.rubyforge.org%3Agenerator&amp;rft.title=OCR+text+derived+from+digitised+books+published+1890+-+1899+in+ALTO+XML&amp;rft.creator=British+Library&amp;rft.creator=British+Library+Labs&amp;rft.publisher=British+Library&amp;rft.contributor=%5B%7B%22contributor_given_name%22%3A%22Adrian%22%2C%22contributor_family_name%22%3A%22Edwards%22%2C%22contributor_name_type%22%3A%22Personal%22%2C%22contributor_position%22%3A%220%22%2C%22contributor_type%22%3A%22Curator%22%2C%22contributor_institutional_relationship%22%3A%5B%22Staff+member%22%5D%7D%2C%7B%22contributor_given_name%22%3A%22Neil%22%2C%22contributor_family_name%22%3A%22Fitzgerald%22%2C%22contributor_name_type%22%3A%22Personal%22%2C%22contributor_orcid%22%3A%220000-0002-0602-9993%22%2C%22contributor_position%22%3A%221%22%2C%22contributor_type%22%3A%22Contributor%22%2C%22contributor_institutional_relationship%22%3A%5B%22Staff+member%22%5D%7D%5D&amp;rft.format=Dataset+default+Dataset&amp;rft.language=English&amp;rft.relation=XML&amp;rft.relation=books&amp;rft.relation=digitised&amp;rft.relation=metadata&amp;rft.relation=Microsoft&amp;rft.relation=nineteenth+century&amp;rft.relation=ALTO&amp;rft.license=http%3A%2F%2Fcreativecommons.org%2Fpublicdomain%2Fzero%2F1.0%2F"></span>
+<!-- Render Modals -->
+  <div role="dialog" class="modal collection-list-modal fade" id="collection-list-container" tabindex="-1" aria-labelledby="col_add_title">
+  <div class="modal-dialog text-left">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <span class="modal-title" id="col_add_title">Add to collection</span>
+        </div>
+        <div class="modal-body">
+            <em> You do not have access to any existing collections. You may create a new collection.</em><br /><br /><br /><br />
+ <!-- else -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+  </div>
+
+      <div class="section-contrast extended-section-contrast mt-40">
+        <div class="pt-40 pb-40 work-show-abstract">
+          <h3>
+            <div class='metadata-group'><dt>Abstract</dt>
+<dd><ul class='tabular'><li class="attribute attribute-abstract ">This set consists 14847 volumes, published between 1890-1899. The dataset comprises text from the collection of digitised books created using Optical Character Recognition (OCR) technology. The books cover a wide range of subject areas including philosophy, history, poetry and literature. The dataset is in Analysed Layout and Text Object (ALTO) Extensible Markup Language (XML) format.</li></ul></dd></div>
+          </h3>
+          <div class='row work-show-buttons'>
+            <div class='col-sm-6'>
+              <div class="citations">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Citations: <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="/concern/datasets/e0e7b9c8-1d83-4275-afa4-51b255d695a3.endnote?locale=en">EndNote</a></li>
+        <li><a id="zoteroLink" name="zotero" href="/zotero?locale=en">Zotero</a></li>
+        <li><a id="mendeleyLink" name="mendeley" href="/mendeley?locale=en">Mendeley</a></li>
+      </ul>
+    </div>
+</div>
+
+            </div>
+            <div class="col-sm-6">
+              <div class="social-media">
+                <div class='btn-group'>
+                  
+  <ul class="social-link-menu">
+    <li class="social-links">
+    <!-- Sharingbutton Facebook -->
+    <a class="resp-sharing-button__link" target="_blank" rel="noopener noreferrer" title="Facebook" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbl.iro.bl.uk%2Fconcern%2Fdatasets%2Fe0e7b9c8-1d83-4275-afa4-51b255d695a3%3Flocale%3Den">
+      <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+            <g>
+                <path d="M18.768,7.465H14.5V5.56c0-0.896,0.594-1.105,1.012-1.105s2.988,0,2.988,0V0.513L14.171,0.5C10.244,0.5,9.5,3.438,9.5,5.32 v2.145h-3v4h3c0,5.212,0,12,0,12h5c0,0,0-6.85,0-12h3.851L18.768,7.465z" />
+            </g>
+        </svg>
+        </div>
+      </div>
+</a>    </li>
+    <li class="social-links">
+    <!-- Sharingbutton Twitter -->
+    <a class="resp-sharing-button__link" target="_blank" rel="noopener noreferrer" title="Twitter" href="https://twitter.com/intent/tweet/?text=Dataset+%7C+OCR+text+derived+from+digitised+books+published+1890+-+1899+in+ALTO+XML+%7C+ID%3A+e0e7b9c8-1d83-4275-afa4-51b255d695a3+%7C+Hyku&amp;url=https%3A%2F%2Fbl.iro.bl.uk%2Fconcern%2Fdatasets%2Fe0e7b9c8-1d83-4275-afa4-51b255d695a3%3Flocale%3Den">
+      <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+            <g>
+                <path d="M23.444,4.834c-0.814,0.363-1.5,0.375-2.228,0.016c0.938-0.562,0.981-0.957,1.32-2.019c-0.878,0.521-1.851,0.9-2.886,1.104 C18.823,3.053,17.642,2.5,16.335,2.5c-2.51,0-4.544,2.036-4.544,4.544c0,0.356,0.04,0.703,0.117,1.036 C8.132,7.891,4.783,6.082,2.542,3.332C2.151,4.003,1.927,4.784,1.927,5.617c0,1.577,0.803,2.967,2.021,3.782 C3.203,9.375,2.503,9.171,1.891,8.831C1.89,8.85,1.89,8.868,1.89,8.888c0,2.202,1.566,4.038,3.646,4.456 c-0.666,0.181-1.368,0.209-2.053,0.079c0.579,1.804,2.257,3.118,4.245,3.155C5.783,18.102,3.372,18.737,1,18.459 C3.012,19.748,5.399,20.5,7.966,20.5c8.358,0,12.928-6.924,12.928-12.929c0-0.198-0.003-0.393-0.012-0.588 C21.769,6.343,22.835,5.746,23.444,4.834z" />
+            </g>
+        </svg>
+        </div>
+      </div>
+</a>    </li>
+  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-40">
+        <!--
+ OVERRIDE 2.9.1 https://github.com/samvera/hyrax/blob/v2.0.2/app/views/hyrax/base/_items.html.erb
+ add license feature
+-->
+
+  <div class="col-sm-12 work-show-items">
+    <h2>Items:</h2>
+    <table class="table table-striped related-files">
+      <thead>
+        <tr>
+          <th>Thumbnail</th>
+          <th>File Name</th>
+          <th>Date Uploaded</th>
+          <th>Visibility</th>
+          <th><span class="translation_missing" title="translation missing: en.hyrax.base.items.file_size">File Size</span></th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+<tr class="file_set attributes">
+  <td class="thumbnail">
+      <a data-context-href="/catalog/135c0882-1e09-4d0a-8d88-a8ac41066b10/track?locale=en" href="/downloads/135c0882-1e09-4d0a-8d88-a8ac41066b10?locale=en"><img src="/assets/default-69d5e0928f2c867492b6ddcb62831ca6ffc02f60711c795de1646dfdcbb40d2e.png" /></a>
+  </td>
+  <td class="attribute attribute-filename ensure-wrapped">
+      <a target="_blank" href="/downloads/135c0882-1e09-4d0a-8d88-a8ac41066b10?locale=en">1890_1899.zip</a>
+  </td>
+  <td class="attribute attribute-date_uploaded">2018-12-29</td>
+  <td class="attribute permission">
+    <span class="label label-success">Public</span>
+  </td>
+  <td class="attribute attribute-file_size">
+    44 GB
+  </td>
+  <td>
+      <div class="btn-group">
+
+  <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" id="dropdownMenu_135c0882-1e09-4d0a-8d88-a8ac41066b10" aria-haspopup="true">
+    <span class="sr-only">Press to </span>
+    Select an action
+    <span class="caret" aria-hidden="true"></span>
+  </button>
+
+  <ul role="menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu_135c0882-1e09-4d0a-8d88-a8ac41066b10">
+
+
+    <li role="menuitem" tabindex="-1">
+      <a title="Download &quot;1890_1899.zip&quot;" target="_blank" href="/downloads/135c0882-1e09-4d0a-8d88-a8ac41066b10?locale=en">Download</a>
+    </li>
+
+  </ul>
+</div>
+
+
+  </td>
+</tr>
+
+      </tbody>
+    </table>
+      <div class="row">
+  </div>
+  </div>
+
+      </div>
+      <div class="section-contrast extended-section-contrast mt-40">
+        <div class="pb-40 pt-40">
+          <div class="col-xs-12">
+  <div class="workflow-actions">
+    
+  </div>
+</div>
+
+          <h2>Metadata</h2>
+            <div class="col-sm pt-40">
+              
+              <dl class='work-show metadata-block dataset'  itemscope itemtype="http://schema.org/Dataset">
+  
+
+
+
+
+<div class='metadata-group'><dt>Resource Type</dt>
+<dd><ul class='tabular'><li class="attribute attribute-resource_type_label ">Dataset</li></ul></dd></div>
+
+  <div class="metadata-group">
+    <!-- rendered from views/hyrax/base///attribute_rows_custom.html.erb -->
+
+  <dt>Creator</dt>
+<dd>
+  <ul class="tabular">
+      <li class="attribute metadata-creator ">
+        <span itemprop="creator" style="float:left">
+          British Library
+        </span>
+        <span itemprop="creator">
+            <span style="float:left" >&nbsp;(</span>
+
+
+                <a href='http://www.isni.org/isni/0000000123081542' target="_blank">
+                <img class="img-responsive" alt="ISNI" style="float:left" height="16" width="26" src="/assets/isni-d7693fcd6f049102061e6e7018c466c2978107873741f324ca0ce7c7baf80a31.png" />
+                </a>
+            <span>)</span>
+        </span>
+        <br/>
+      </li>
+      <li class="attribute metadata-creator ">
+        <span itemprop="creator" style="float:left">
+          British Library Labs
+        </span>
+        <span itemprop="creator">
+        </span>
+        <br/>
+      </li>
+  </ul>
+</dd>
+
+ 
+
+  </div>
+
+  <div class="metadata-group">
+  <!-- rendered from views/hyrax/base///attribute_rows_custom.html.erb -->
+
+
+
+   <dt>Contributor</dt>
+<dd>
+  <ul class="tabular">
+      <li class="attribute contributor ">
+        <span itemprop="contributor" style="float:left">
+          Edwards, Adrian
+        </span>
+        <span itemprop="contributor">
+            <span style="float:left" >&nbsp;(</span>
+              <span style="float:left">
+                Curator
+              </span>
+
+
+
+            <span>)</span>
+        </span>
+        <br/>
+      </li>
+      <li class="attribute contributor ">
+        <span itemprop="contributor" style="float:left">
+          Fitzgerald, Neil
+        </span>
+        <span itemprop="contributor">
+            <span style="float:left" >&nbsp;(</span>
+              <span style="float:left">
+                Contributor
+              </span>
+
+                <a href='https://orcid.org/0000000206029993'  target="_blank">
+                  <img class="img-responsive" alt="ORCID" style="float:left" height="16" width="16" src="/assets/orcid-cb273c1ff10d304ce1b6108a172bfd1660561e7fd8133b083cd66ee0f4a0a944.png" />
+                </a>
+
+
+            <span>)</span>
+        </span>
+        <br/>
+      </li>
+  </ul>
+</dd>
+
+ 
+
+  </div>
+
+<div class='metadata-group'><dt>Date published</dt>
+<dd><ul class='tabular'><li class="attribute attribute-date_published ">2014</li></ul></dd></div>
+
+
+
+
+
+<div class='metadata-group'><dt>Institution</dt>
+<dd><ul class='tabular'><li class="attribute attribute-institution ">British Library</li></ul></dd></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='metadata-group'><dt>Publisher</dt>
+<dd><ul class='tabular'><li itemprop="publisher" itemscope itemtype="http://schema.org/Organization" class="attribute attribute-publisher "><span itemprop="name">British Library</span></li></ul></dd></div>
+
+<div class='metadata-group'><dt>Place of publication</dt>
+<dd><ul class='tabular'><li class="attribute attribute-place_of_publication ">London, UK</li></ul></dd></div>
+
+
+
+
+
+
+
+
+
+
+<div class='metadata-group'><dt>Official URL</dt>
+<dd><ul class='tabular'><li class="attribute attribute-official_link "><a href="https://doi.org/10.21250/db12">https://doi.org/10.21250/db12</a></li></ul>
+              </dd>
+            </div>
+
+
+
+
+
+
+
+
+
+<div class='metadata-group'><dt>Licence</dt>
+<dd><ul class='tabular'><li class="attribute attribute-license "><span itemprop="resource_type">CC0 1.0 Universal Public Domain</span></li></ul></dd></div>
+
+
+
+
+
+<!-- if you change the label DOI below you must change the if condition in
+app/renderers/ubiquity/external_url_attribute_renderer.rb to reflect the newly re-named label
+-->
+  <div class='metadata-group'><dt>DOI</dt>
+<dd><ul class='tabular'><li class="attribute attribute-doi ">doi.org/10.21250/db12</li></ul></dd></div>
+
+
+
+  <div class="metadata-group">
+    
+
+  <dt>Alternate identifier</dt>
+<dd>
+    <ul class="tabular ">
+      <li class="attribute alternate_identifier">
+          <b>identifier: </b>DAR00147&nbsp;
+      </li>
+      <li class="attribute alternate_identifier_type">
+          <b>type: </b>Digital Asset Register ID
+      </li>
+    </ul>
+</dd>
+
+ 
+
+  </div>
+
+
+<div class='metadata-group'><dt>Keyword</dt>
+<dd><ul class='tabular'><li class="attribute attribute-keyword "><span itemprop="keywords"><a href="/catalog?f%5Bkeyword_sim%5D%5B%5D=ALTO&amp;locale=en">ALTO</a></span></li><li class="attribute attribute-keyword "><span itemprop="keywords"><a href="/catalog?f%5Bkeyword_sim%5D%5B%5D=books&amp;locale=en">books</a></span></li><li class="attribute attribute-keyword "><span itemprop="keywords"><a href="/catalog?f%5Bkeyword_sim%5D%5B%5D=digitised&amp;locale=en">digitised</a></span></li><li class="attribute attribute-keyword "><span itemprop="keywords"><a href="/catalog?f%5Bkeyword_sim%5D%5B%5D=metadata&amp;locale=en">metadata</a></span></li><li class="attribute attribute-keyword "><span itemprop="keywords"><a href="/catalog?f%5Bkeyword_sim%5D%5B%5D=Microsoft&amp;locale=en">Microsoft</a></span></li><li class="attribute attribute-keyword collapse"><span itemprop="keywords"><a href="/catalog?f%5Bkeyword_sim%5D%5B%5D=nineteenth+century&amp;locale=en">nineteenth century</a></span></li><li class="attribute attribute-keyword collapse"><span itemprop="keywords"><a href="/catalog?f%5Bkeyword_sim%5D%5B%5D=XML&amp;locale=en">XML</a></span></li><li><button id="keyword-collapse" class="collapse-fields" data-toggle="collapse" data-target=".attribute-keyword.collapse" aria-expanded="false" aria-controls="collapse"><span>Show more</span><span style='display:none'>Close list</span></button></li></ul></dd></div>
+
+
+
+
+
+<div class='metadata-group'><dt>Additional Information</dt>
+<dd><ul class='tabular'><li class="attribute attribute-add_info ">This dataset contains a set of zipfiles, each containing the set of ALTO XML files for a single volume of a book (or a single book, if it consists of a single volume). Example ALTO XML file to give an idea of the sort of XML you will encounter in this dataset. This dataset was zipped up using 7zip due to its large size, and we recommend you use the same to unzip it. Without using an application like 7zip, older versions of Windows may fail to open it, claiming that the zipfile is corrupt or damaged in some way. A volume's filename will give you a lot of information about itself - what the system identifier is (the first large number), what volume and the range of pages within. The final large number (before the "dat") while this can be safely disregarded, it is unique to that particular volume and may be of some use.</li></ul></dd></div>
+
+
+
+
+  
+  
+</dl>
+            </div>
+        </div>
+      </div>
+        <div class="row pt-40 pb-40">
+    <div class="col-sm-12">
+      <h2 class="pb-40">Relationships</h2>
+          <dt> In Collection: </dt>
+<dd>
+      <ul class="tabular">
+          <li class='attribute attribute-title'>
+            <a href="/collections/64e3804a-788a-4c4b-962c-ae180d955455?locale=en">British Library Datasets</a>
+          </li>
+          <li class='attribute attribute-title'>
+            <a href="/collections/b7fd2482-debd-4495-9494-72aa2ead00bb?locale=en">19th Century Digitised Books Collection</a>
+          </li>
+      </ul>
+  </dd>
+
+
+    </div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+
+    </div>
+    <!-- /#content-wrapper -->
+    <footer class="navbar navbar-inverse site-footer">
+  <div class="container-fluid">
+    <div class="navbar-text">
+      <!-- /begin nav links: OVERRIDE here to include nav links on bottom bar -->
+      <div class="row">
+          <div class = 'col-xs-6 col-md-2 footer-link' >
+            <a href="/?locale=en">Home</a>
+          </div>
+          <div class = 'col-xs-6 col-md-2 footer-link' >
+            <a href="/about?locale=en">About</a>
+          </div>
+          <div class = 'col-xs-6 col-md-2 footer-link' >
+            <a href="/help?locale=en">Help</a>
+          </div>
+          <div class = 'col-xs-6 col-md-2 footer-link' >
+            <a href="/contact?locale=en">Contact</a>
+          </div>
+          <div class = 'col-xs-12 col-md-4 footer-link'>
+          <a href="/terms?locale=en">Terms of Use</a>
+          </div>
+      </div><!-- /.nav -->
+    </div>
+    <div class="navbar-right">
+      <div class="navbar-text text-right footer-link">
+        Managed by the <a href="https://www.bl.uk/">British Library</a>
+        <br/>Provided by <a href="https://softserv.scientist.com/">Software Services by Scientist.com</a> & <a href="https://cosector.com/">CoSector</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <div id="ajax-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>
+

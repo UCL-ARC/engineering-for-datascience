@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "sl-p01"
+  cluster:
+    server: "https://rancher.condenser.arc.ucl.ac.uk/k8s/clusters/c-m-bv9x5ngh"
+
+users:
+- name: "sl-p01"
+  user:
+    token: "<put your token here>"
+
+
+contexts:
+- name: "sl-p01"
+  context:
+    user: "sl-p01"
+    namespace: "<put your namespace here>"
+    cluster: "sl-p01"
+
+current-context: "sl-p01"

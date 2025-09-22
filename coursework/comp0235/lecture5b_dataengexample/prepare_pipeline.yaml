@@ -1,0 +1,12 @@
+- name: prepare pipeline
+  hosts: all
+  tasks:
+  - name: "Clone git repo"
+    ansible.builtin.git:
+      repo: "https://github.com/owainkenwayucl/coursework-c0235"
+      dest: "/home/almalinux/coursework-c0235"
+  - name: "Set up virtualenv"
+    ansible.builtin.pip:
+      virtualenv_command: "python3 -m venv"
+      virtualenv: /home/almalinux/comp-235-lect-4
+      name: /home/almalinux/coursework-c0235/lecture5b_dataengexample/dataeng

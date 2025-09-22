@@ -1,0 +1,18 @@
+- name: Do the reduction
+  hosts: mgmtnode
+  tasks:
+  - name: Create the results directory
+    ansible.builtin.file:
+      path: /home/almalinux/results
+      state: directory
+  - name: Put the output files onto the management node
+    ansible.builtin.copy:
+      src: "{{ item }}"
+      dest: /home/almalinux/results
+    with_fileglob: ".output/*"
+  - name: Do the reduction
+    ansible.builtin.shell:  "/home/almalinux/comp-235-lect-4/bin/python3 -c 'from dataeng.combine import combine_entry as main;main()' results"
+    register: results
+  - name: Print the results
+    ansible.builtin.debug:
+      var: results

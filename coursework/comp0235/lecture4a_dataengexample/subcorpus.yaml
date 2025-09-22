@@ -1,0 +1,39 @@
+- name: time how long it takes to analyse one or more files on each machine
+  hosts: all
+  vars:
+    subcorpus: 
+      - 000951039_0_1-340pgs__619422
+      - 001998286_2_1-304pgs__1100485
+      - 003094387_1_1-452pgs__1084622
+      - 010219361_1_1-668pgs__1099046
+      - 000951100_0_1-372pgs__614273
+      - 001998286_3_1-248pgs__1100489
+      - 003094387_2_1-448pgs__1084626
+      - 010219361_2_1-764pgs__1111612
+      - 000951235_0_1-182pgs__1084718
+      - 001998718_0_1-414pgs__1204822
+      - 003096146_0_1-20pgs__1013196
+      - 010878173_0_1-544pgs__940898
+      - 000951888_0_1-468pgs__982447
+      - 001999297_0_1-556pgs__1075739
+      - 003096795_0_1-496pgs__1065055
+      - 000951889_0_1-412pgs__607049
+      - 001999298_0_1-930pgs__1065722
+      - 003097307_0_1-162pgs__1053049
+  tasks:
+  - name: set up a folder for a small subcorpus
+    ansible.builtin.file:
+      path: /data/almalinux/data/subcorpus
+      state: directory
+  - name: set up a small sub-corpus of targets for performance measurement
+    ansible.builtin.copy:
+      src: "/data/almalinux/1850_1859/{{item}}_dat.zip"
+      dest: "/data/almalinux/data/subcorpus/{{item}}_dat.zip"
+      remote_src: yes
+    loop: "{{subcorpus}}"
+  - name: Run the analysis on a set of target files, and time it in parallel
+    ansible.builtin.shell: "time /home/almalinux/comp-235-lect-4/bin/python3 -c 'from dataeng.analysis import analysis_entry as main;main()' /data/almalinux/data/subcorpus arms --parallel"
+    register: parallel_result
+  - name: print the parallel result when the playbook is run
+    ansible.builtin.debug:
+      var: parallel_result
