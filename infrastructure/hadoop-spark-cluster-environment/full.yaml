@@ -1,0 +1,51 @@
+---
+- hosts: all
+  roles:
+  - common
+  - hostfile
+  - firewall
+  - hadoopinstall 
+  - sshconfig
+
+- hosts: loginnode
+  roles:
+  - loginnodename
+  - seconddisk
+
+- hosts: mgmtnode
+  roles:
+  - mgmtnodename  
+
+- hosts: workers
+  roles:
+  - workername
+
+- hosts: all
+  roles:
+  - reboot
+
+# Set up shared keys
+- hosts: loginnode
+  roles: 
+  - commonkeyslogin
+- hosts: mgmtnode:workers
+  roles:
+  - commonkeysother
+
+# Hadoop configure
+- hosts: mgmtnode
+  roles: 
+  - hadoopconfigmgmt
+
+- hosts: workers
+  roles: 
+  - hadoopconfigworkers
+
+- hosts: mgmtnode
+  roles: 
+  - hadoopconfigcluster
+
+# Install spark
+- hosts: all
+  roles:
+  - spark
