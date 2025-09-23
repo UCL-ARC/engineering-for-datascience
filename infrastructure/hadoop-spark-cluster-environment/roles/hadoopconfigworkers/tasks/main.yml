@@ -1,0 +1,4 @@
+- name: create datanode
+  ansible.builtin.file:
+    path: /opt/hadoop_tmp/hdfs/datanode
+    state: directory
