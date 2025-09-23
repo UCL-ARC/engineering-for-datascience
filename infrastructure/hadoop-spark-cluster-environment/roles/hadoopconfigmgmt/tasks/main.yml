@@ -5,4 +5,4 @@
 - name: generate worker file
   ansible.builtin.template:
     src: templates/workers.j2
-    dest: hadoop-3.4.2/etc/hadoop/workers
+    dest: hadoop-3.4.1/etc/hadoop/workers

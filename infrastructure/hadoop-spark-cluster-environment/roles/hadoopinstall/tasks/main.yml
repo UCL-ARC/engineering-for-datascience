@@ -1,7 +1,7 @@
 - name: Download hadoop
   ansible.builtin.get_url:
     dest: /home/almalinux/hadoop.tar.gz
-    url: "https://archive.apache.org/dist/hadoop/common/hadoop-3.4.2/hadoop-3.4.2.tar.gz"
+    url: "https://archive.apache.org/dist/hadoop/common/hadoop-3.4.1/hadoop-3.4.1.tar.gz"
 - name: Unpack tgz file
   ansible.builtin.unarchive:
     dest: /home/almalinux/
@@ -12,7 +12,7 @@
     path: /home/almalinux/.bashrc
     block: |
       export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
-      export HADOOP_HOME=/home/almalinux/hadoop-3.4.2
+      export HADOOP_HOME=/home/almalinux/hadoop-3.4.1
       export HADOOP_INSTALL=$HADOOP_HOME
       export YARN_HOME=$HADOOP_HOME
       export PATH=$PATH:$HADOOP_INSTALL/bin:$HOME/spark-3.5.6-bin-hadoop3-scala2.13/bin
@@ -23,7 +23,7 @@
     state: present
 - name: config core-site.xml
   ansible.builtin.blockinfile:
-    path: /home/almalinux/hadoop-3.4.2/etc/hadoop/core-site.xml
+    path: /home/almalinux/hadoop-3.4.1/etc/hadoop/core-site.xml
     insertafter: <configuration>
     marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
@@ -38,7 +38,7 @@
     state: present
 - name: config hdfs-site.xml
   ansible.builtin.blockinfile:
-    path: /home/almalinux/hadoop-3.4.2/etc/hadoop/hdfs-site.xml
+    path: /home/almalinux/hadoop-3.4.1/etc/hadoop/hdfs-site.xml
     insertafter: <configuration>
     marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
@@ -63,7 +63,7 @@
     state: present
 - name: config yarn-site.xml
   ansible.builtin.blockinfile:
-    path: /home/almalinux/hadoop-3.4.2/etc/hadoop/yarn-site.xml
+    path: /home/almalinux/hadoop-3.4.1/etc/hadoop/yarn-site.xml
     insertafter: <configuration>
     marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
@@ -86,7 +86,7 @@
     state: present
 - name: config mapred-site.xml
   ansible.builtin.blockinfile:
-    path: /home/almalinux/hadoop-3.4.2/etc/hadoop/mapred-site.xml
+    path: /home/almalinux/hadoop-3.4.1/etc/hadoop/mapred-site.xml
     insertafter: <configuration>
     marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
@@ -101,7 +101,7 @@
     state: present
 - name: fix JAVA_HOME in haddop-env.sh
   ansible.builtin.blockinfile:
-    path: /home/almalinux/hadoop-3.4.2/etc/hadoop/hadoop-env.sh 
+    path: /home/almalinux/hadoop-3.4.1/etc/hadoop/hadoop-env.sh 
     insertafter: "# export JAVA_HOME="
     block: |
       export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
