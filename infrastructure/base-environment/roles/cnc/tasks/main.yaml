@@ -18,7 +18,7 @@
   ansible.builtin.dnf:
     name:
       - terraform
-      - vault
+#      - vault # currently this package is broken
   become: true
   become_user: root
 - name: Download and install LinuxBrew 🐧🍻
