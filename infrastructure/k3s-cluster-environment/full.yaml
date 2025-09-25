@@ -10,4 +10,4 @@
 
 - hosts: workers
   roles:
-  - workers
+  - worker
