@@ -2,6 +2,12 @@
 - hosts: all
   roles:
   - common
-  - reboot
-  - openmpi
-  - python312
+  - docker
+
+- hosts: headnode
+  roles:
+  - headnode
+
+- hosts: workers
+  roles:
+  - workers
