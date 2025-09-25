@@ -1,0 +1,69 @@
+
+
+- name: Add /usr/local/bin to $PATH
+  ansible.builtin.copy:
+    content: "export PATH=/usr/local/bin:$PATH"
+    dest: "/etc/profile.d/usrlocal.sh"
+  become: true
+  become_user: root
+- name: Create directory for registry file [1].
+  ansible.builtin.file: 
+    path: "/etc/rancher"
+    state: directory
+  become: true
+  become_user: root
+- name: Create directory for registry file [2].
+  ansible.builtin.file: 
+    path: "/etc/rancher/k3s"
+    state: directory
+  become: true
+  become_user: root
+- name: Install registry file
+  ansible.builtin.copy:
+    src: ./files/registries.yaml
+    dest: "/etc/rancher/k3s/registries.yaml"
+    mode: "0640"
+  become: true
+  become_user: root
+- name: Download and install K3s
+  ansible.builtin.shell: "curl -sfL https://get.k3s.io | bash -"
+  become: true
+  become_user: root
+- name: Set permissions on KUBECONFIG
+  ansible.builtin.file:
+    path: "/etc/rancher/k3s/k3s.yaml"
+    owner: "root"
+    group: "docker"
+    mode: "0640"
+  become: true
+  become_user: root
+- name: Fetch kubeconf
+  ansible.builtin.fetch:
+    dest: .generated/
+    flat: true
+    src: /etc/rancher/k3s/k3s.yaml
+  become: true
+  become_user: root
+- name: Make .kube directory
+  ansible.builtin.file:
+    path: /home/almalinux/.kube
+    state: directory
+- name: Copy kubeconf
+  ansible.builtin.copy:
+    src: .generated/k3s.yaml
+    dest: /home/almalinux/.kube/config
+- name: Install Helm tools
+  ansible.builtin.shell: "curl -sfL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash -l  -"
+- name: Add Bitnami repo
+  ansible.builtin.shell: "/usr/local/bin/helm repo add bitnami https://charts.bitnami.com/bitnami"
+- name: Add JupyterHub repo
+  ansible.builtin.shell: "/usr/local/bin/helm repo add jupyterhub https://hub.jupyter.org/helm-chart/"
+- name: Refresh helm repos
+  ansible.builtin.shell: "/usr/local/bin/helm repo update"
+- name: Get token
+  ansible.builtin.fetch: 
+    src: "/var/lib/rancher/k3s/server/node-token"
+    dest: "./"
+    flat: true
+  become: true
+  become_user: root

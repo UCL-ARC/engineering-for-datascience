@@ -1,0 +1,47 @@
+- name: Add /usr/local/bin to $PATH
+  ansible.builtin.copy:
+    content: "export PATH=/usr/local/bin:$PATH"
+    dest: "/etc/profile.d/usrlocal.sh"
+  become: true
+  become_user: root
+- name: Create directory for registry file [1].
+  ansible.builtin.file: 
+    path: "/etc/rancher"
+    state: directory
+  become: true
+  become_user: root
+- name: Create directory for registry file [2].
+  ansible.builtin.file: 
+    path: "/etc/rancher/k3s"
+    state: directory
+  become: true
+  become_user: root
+- name: Install registry file
+  ansible.builtin.copy:
+    src: ./files/registries.yaml
+    dest: "/etc/rancher/k3s/registries.yaml"
+    mode: "0640"
+  become: true
+  become_user: root
+- name: Download and install K3s
+  ansible.builtin.shell: "curl -sfL https://get.k3s.io | bash -"
+  environment:
+    K3S_URL: "https://{{ groups['headnode'][0] }}:6443"
+    K3S_TOKEN: "{{ nodetoken }}"
+  become: true
+  become_user: root
+- name: fix ip address
+  ansible.builtin.replace:
+    path: /etc/rancher/k3s/k3s.yaml
+    regexp: '127.0.0.1'
+    replace: "{{groups['headnode'][0]}}"
+  become: true
+  become_user: root
+- name: Make .kube directory
+  ansible.builtin.file:
+    path: /home/almalinux/.kube
+    state: directory
+- name: Copy kubeconf
+  ansible.builtin.copy:
+    src: .generated/k3s.yaml
+    dest: /home/almalinux/.kube/config
