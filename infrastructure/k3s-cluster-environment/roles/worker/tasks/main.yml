@@ -30,13 +30,6 @@
     K3S_TOKEN: "{{ nodetoken }}"
   become: true
   become_user: root
-- name: fix ip address
-  ansible.builtin.replace:
-    path: /etc/rancher/k3s/k3s.yaml
-    regexp: '127.0.0.1'
-    replace: "{{groups['headnode'][0]}}"
-  become: true
-  become_user: root
 - name: Make .kube directory
   ansible.builtin.file:
     path: /home/almalinux/.kube
