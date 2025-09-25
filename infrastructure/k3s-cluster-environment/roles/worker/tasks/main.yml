@@ -38,3 +38,8 @@
   ansible.builtin.copy:
     src: .generated/k3s.yaml
     dest: /home/almalinux/.kube/config
+- name: fix ip address
+  ansible.builtin.replace:
+    path: /home/almalinux/.kube/config
+    regexp: '127.0.0.1'
+    replace: "{{groups['headnode'][0]}}"
