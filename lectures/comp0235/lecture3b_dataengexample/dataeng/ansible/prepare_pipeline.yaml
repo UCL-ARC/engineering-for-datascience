@@ -3,10 +3,10 @@
   tasks:
   - name: "Clone git repo"
     ansible.builtin.git:
-      repo: "https://github.com/owainkenwayucl/coursework-c0235"
+      repo: "https://github.com/UCL-ARC/engineering-for-datascience.git"
       dest: "/home/almalinux/coursework-c0235"
   - name: "Set up virtualenv"
     ansible.builtin.pip:
       virtualenv_command: "python3 -m venv"
       virtualenv: /home/almalinux/comp-235-lect-4
-      name: /home/almalinux/coursework-c0235/lecture3b_dataengexample/dataeng
+      name: /home/almalinux/coursework-c0235/lectures/comp0235/lecture3b_dataengexample/dataeng
