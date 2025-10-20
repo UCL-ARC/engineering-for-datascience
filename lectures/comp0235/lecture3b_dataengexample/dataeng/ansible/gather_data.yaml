@@ -10,15 +10,7 @@
   vars:
     targets: "{{lookup('file','.targets')|split('\n')}}"
   tasks:
-  - name: Create temp folder for incomplete downloads on larger volume
-    ansible.builtin.file:
-      path: data/tmp
-      state: directory
-      mode: '0755' 
   - name: Fetch the individual files 
-    ansible.builtin.get_url:
-      url:   "https://s3.ds4eng.condenser.arc.ucl.ac.uk/britishlibrary/{{ item }}"
-      dest: data
-      tmp_dest: data/tmp
+    ansible.builtin.command: "cd /data/almalinux && wget https://s3.ds4eng.condenser.arc.ucl.ac.uk/britishlibrary/{{ item }}"
     loop: "{{targets}}"
     register: monitor
