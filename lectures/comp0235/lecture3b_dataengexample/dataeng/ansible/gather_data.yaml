@@ -11,6 +11,6 @@
     targets: "{{lookup('file','.targets')|split('\n')}}"
   tasks:
   - name: Fetch the individual files 
-    ansible.builtin.command: "cd /data/almalinux && wget https://s3.ds4eng.condenser.arc.ucl.ac.uk/britishlibrary/{{ item }}"
+    ansible.builtin.shell: "cd /data/almalinux && wget https://s3.ds4eng.condenser.arc.ucl.ac.uk/britishlibrary/{{ item }}"
     loop: "{{targets}}"
     register: monitor
