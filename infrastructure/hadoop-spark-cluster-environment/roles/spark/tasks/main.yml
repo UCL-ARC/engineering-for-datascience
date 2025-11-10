@@ -1,7 +1,9 @@
 - name: Download spark .jar
   ansible.builtin.get_url:
     dest: /home/almalinux/spark.tgz
-    url: "https://archive.apache.org/dist/spark/spark-3.5.6/spark-3.5.6-bin-hadoop3-scala2.13.tgz"
+#    url: "https://archive.apache.org/dist/spark/spark-3.5.6/spark-3.5.6-bin-hadoop3-scala2.13.tgz"
+    url: "https://s3.ds4eng.condenser.arc.ucl.ac.uk/apache/spark-3.5.6-bin-hadoop3-scala2.13.tgz"
+    checksum: "sha256:f411f9ca8068fe6c97e812c723b04783e4f6de44402c2eb89bc382945adfc7d5"    
 - name: Unpack tgz file
   ansible.builtin.unarchive:
     dest: /home/almalinux/
