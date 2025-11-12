@@ -1,12 +1,13 @@
+# Note we have to install the library system-wide because of how pyspark runs jobs
 - name: prepare pipeline
   hosts: all
+  become: true
+  become_user: root
   tasks:
   - name: "Clone git repo"
     ansible.builtin.git:
       repo: "https://github.com/owainkenwayucl/coursework-c0235"
-      dest: "/home/almalinux/coursework-c0235"
+      dest: "/home/coursework-c0235"
   - name: "Set up virtualenv"
     ansible.builtin.pip:
-      virtualenv_command: "python3 -m venv"
-      virtualenv: /home/almalinux/comp-235-lect-4
       name: /home/almalinux/coursework-c0235/lecture5b_dataengexample/dataeng
