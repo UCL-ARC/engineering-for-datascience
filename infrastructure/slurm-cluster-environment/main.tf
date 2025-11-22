@@ -68,6 +68,13 @@ resource "harvester_virtualmachine" "loginvm" {
   cloudinit {
     user_data_secret_name = harvester_cloudinit_secret.cloud-config.name
   }
+
+  timeouts {
+    create = "20m"
+    update = "20m"
+    delete = "20m"
+  }
+
 }
 
 resource "harvester_virtualmachine" "mgmtvm" {
@@ -112,6 +119,13 @@ resource "harvester_virtualmachine" "mgmtvm" {
   cloudinit {
     user_data_secret_name = harvester_cloudinit_secret.cloud-config.name
   }
+
+  timeouts {
+    create = "20m"
+    update = "20m"
+    delete = "20m"
+  }
+
 }
 
 resource "harvester_virtualmachine" "workervm" {
@@ -156,4 +170,11 @@ resource "harvester_virtualmachine" "workervm" {
   cloudinit {
     user_data_secret_name = harvester_cloudinit_secret.cloud-config.name
   }
+
+  timeouts {
+    create = "20m"
+    update = "20m"
+    delete = "20m"
+  }
+
 }
