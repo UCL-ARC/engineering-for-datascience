@@ -18,7 +18,7 @@
 - name: Download installer
   ansible.builtin.get_url:
     dest: "/home/almalinux/harbor.tar.gz"
-    src: "https://github.com/goharbor/harbor/releases/download/v2.14.1/harbor-offline-installer-v2.14.1.tgz"
+    url: "https://github.com/goharbor/harbor/releases/download/v2.14.1/harbor-offline-installer-v2.14.1.tgz"
 - name: Unpack installer
   ansible.builtin.shell: "tar xvf harbor.tar.gz"
 
