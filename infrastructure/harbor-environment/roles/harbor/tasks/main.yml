@@ -75,7 +75,7 @@
   ansible.builtin.lineinfile:
     path: "/home/almalinux/harbor/harbor.yml"
     regexp: '  password: root123'
-    line: "  password: {{lookup('ansible.builtin.password', './.harborpgpass', length=16) }}""
+    line: "  password: {{lookup('ansible.builtin.password', './.harborpgpass', length=16) }}"
 
 
    
