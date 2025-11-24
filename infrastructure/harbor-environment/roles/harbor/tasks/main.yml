@@ -1,0 +1,25 @@
+- name: Copy TLS generation stub
+  ansible.builtin.copy:
+    mode: "0700"
+    src: "files/generate_certs.sh"
+    dest: "/home/almalinux/generate_certs.sh"  
+- name: Check to see if we already have certificates
+  ansible.builtin.stat:
+    path: "/home/almalinux/{{inventory_hostname}}.crt"
+  register: certfile
+- name: Create certificate
+  ansible.builtin.shell: "bash /home/almalinux/generate_certs.sh {{inventory_hostname}}"
+  when: not certfile.stat.exists
+- name: Get the certificate
+  ansible.builtin.fetch:
+    dest: "generated_files/{{inventory_hostname}}.crt"
+    src: "/home/almalinux/{{inventory_hostname}}.crt"
+    flat: true
+- name: Download installer
+  ansible.builtin.get_url:
+    dest: "/home/almalinux/harbor.tar.gz"
+    src: "https://github.com/goharbor/harbor/releases/download/v2.14.1/harbor-offline-installer-v2.14.1.tgz"
+- name: Unpack installer
+  ansible.builtin.shell: "tar xvf harbor.tar.gz"
+
+
