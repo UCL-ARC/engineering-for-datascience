@@ -5,7 +5,7 @@
   delegate_to: localhost
 - name: Set fact from URL
   set_fact:
-    external_url: "{{url_cmd.stdout}}"
+    external_url: "{{url_cmd.stdout[1:-1]}}"
 - name: Copy TLS generation stub
   ansible.builtin.copy:
     mode: "0700"
@@ -34,7 +34,7 @@
 - name: Set IP address in config file
   ansible.builtin.lineinfile:
     path: "/home/almalinux/harbor/harbor.yml"
-    regexp: 'hostame: reg.mydomain.com'
+    regexp: 'hostname: reg.mydomain.com'
     line: "hostname: {{inventory_hostname}}"
 - name: Set external hostname in config file
   ansible.builtin.lineinfile:
@@ -51,21 +51,6 @@
     path: "/home/almalinux/harbor/harbor.yml"
     regexp: '  certificate: /your/certificate/path'
     line: "  certificate: /home/almalinux/{{inventory_hostname}}.crt"
-- name: Set external hostname in config file
-  ansible.builtin.lineinfile:
-    path: "/home/almalinux/harbor/harbor.yml"
-    regexp: '# external_url: https://reg.mydomain.com:8433'
-    line: "external_url: https://{{external_url}}"
-- name: Set IP address in config file
-  ansible.builtin.lineinfile:
-    path: "/home/almalinux/harbor/harbor.yml"
-    regexp: 'hostame: reg.mydomain.com'
-    line: "hostname: {{inventory_hostname}}"
-- name: Set external hostname in config file
-  ansible.builtin.lineinfile:
-    path: "/home/almalinux/harbor/harbor.yml"
-    regexp: '# external_url: https://reg.mydomain.com:8433'
-    line: "external_url: https://{{external_url}}"
 - name: Harbor Admin Password
   ansible.builtin.lineinfile:
     path: "/home/almalinux/harbor/harbor.yml"
