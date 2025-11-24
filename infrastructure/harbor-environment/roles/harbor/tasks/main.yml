@@ -1,3 +1,11 @@
+- name: Get URL
+  ansible.builtin.shell: "terraform output | grep external_url | awk '{print $3}'"
+  register: url_cmd
+  changed_when: false
+  delegate_to: localhost
+- name: Set fact from URL
+  set_fact:
+    external_url: "{{url_cmd.stdout}}"
 - name: Copy TLS generation stub
   ansible.builtin.copy:
     mode: "0700"
@@ -21,5 +29,53 @@
     url: "https://github.com/goharbor/harbor/releases/download/v2.14.1/harbor-offline-installer-v2.14.1.tgz"
 - name: Unpack installer
   ansible.builtin.shell: "tar xvf harbor.tar.gz"
+- name: Create yaml config file
+  ansible.builtin.shell: "cp harbor/harbor.yml.tmpl harbor/harbor.yml"
+- name: Set IP address in config file
+  ansible.builtin.lineinfile:
+    path: "/home/almalinux/harbor/harbor.yml"
+    regexp: 'hostame: reg.mydomain.com'
+    line: "hostname: {{inventory_hostname}}"
+- name: Set external hostname in config file
+  ansible.builtin.lineinfile:
+    path: "/home/almalinux/harbor/harbor.yml"
+    regexp: '# external_url: https://reg.mydomain.com:8433'
+    line: "external_url: https://{{external_url}}"
+- name: Private Key
+  ansible.builtin.lineinfile:
+    path: "/home/almalinux/harbor/harbor.yml"
+    regexp: '  private_key: /your/private/key/path'
+    line: "  private_key: /home/almalinux/{{inventory_hostname}}.key"
+- name: Certificate
+  ansible.builtin.lineinfile:
+    path: "/home/almalinux/harbor/harbor.yml"
+    regexp: '  certificate: /your/certificate/path'
+    line: "  certificate: /home/almalinux/{{inventory_hostname}}.crt"
+- name: Set external hostname in config file
+  ansible.builtin.lineinfile:
+    path: "/home/almalinux/harbor/harbor.yml"
+    regexp: '# external_url: https://reg.mydomain.com:8433'
+    line: "external_url: https://{{external_url}}"
+- name: Set IP address in config file
+  ansible.builtin.lineinfile:
+    path: "/home/almalinux/harbor/harbor.yml"
+    regexp: 'hostame: reg.mydomain.com'
+    line: "hostname: {{inventory_hostname}}"
+- name: Set external hostname in config file
+  ansible.builtin.lineinfile:
+    path: "/home/almalinux/harbor/harbor.yml"
+    regexp: '# external_url: https://reg.mydomain.com:8433'
+    line: "external_url: https://{{external_url}}"
+- name: Harbor Admin Password
+  ansible.builtin.lineinfile:
+    path: "/home/almalinux/harbor/harbor.yml"
+    regexp: 'harbor_admin_password: Harbor12345'
+    line: "harbor_admin_password: {{lookup('ansible.builtin.password', './.harboradminpass', length=16) }}"
+- name: Set Postgress Password
+  ansible.builtin.lineinfile:
+    path: "/home/almalinux/harbor/harbor.yml"
+    regexp: '  password: root123'
+    line: "  password: {{lookup('ansible.builtin.password', './.harborpgpass', length=16) }}""
 
 
+   
