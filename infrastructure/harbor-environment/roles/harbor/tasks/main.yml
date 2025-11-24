@@ -61,6 +61,13 @@
     path: "/home/almalinux/harbor/harbor.yml"
     regexp: '  password: root123'
     line: "  password: {{lookup('ansible.builtin.password', './.harborpgpass', length=16) }}"
+- name: Install Harbor
+  ansible.builtin.shell: 
+    cmd: "/home/almalinux/harbor/install.sh" 
+    chdir: "/home/almalinux/harbor/"
+  become: true
+  become_user: root
+    
 
 
    
