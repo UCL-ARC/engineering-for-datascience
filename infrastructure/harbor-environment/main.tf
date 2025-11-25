@@ -70,8 +70,8 @@ resource "harvester_virtualmachine" "vm" {
     condenser_ingress_isEnabled = true
     condenser_ingress_reg_hostname = "${var.username}-reg"
     condenser_ingress_reg_port = 443
-    condenser_ingress_os_protocol = "https"
-    condenser_ingress_os_nginx_proxy-body-size = "100000m"
+    condenser_ingress_reg_protocol = "https"
+    condenser_ingress_reg_nginx_proxy-body-size = "100000m"
   }
 
   cloudinit {
