@@ -7,6 +7,6 @@ spec:
     spec:
       containers:
       - name: mnist
-        image: uccaoke-reg.comp0235.condenser.arc.ucl.ac.uk/class/julia_mnist:latest
+        image: uccaoke-reg.comp0235.condenser.arc.ucl.ac.uk/class/python_mnist:latest
       restartPolicy: Never
   backoffLimit: 4
