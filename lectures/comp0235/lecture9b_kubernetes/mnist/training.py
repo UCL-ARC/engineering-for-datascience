@@ -126,8 +126,8 @@ onnx_out_model = torch.onnx.export(cpu_model,
                                export_params=True,
                                input_names = ['input'],                       # the model's input names
                                output_names = ['output'],                     # the model's output names
-                               dynamic_axes={'input' : {0 : 'batch_size'},    # variable length axes
-                                             'output' : {0 : 'batch_size'}})
+                               dynamic_shapes={'input' : {0 : torch.export.Dim('batch_size')},    # variable length axes
+                                             'output' : {0 : torch.export.Dim('batch_size')}})
 
 print("Checking with ONNX")
 
