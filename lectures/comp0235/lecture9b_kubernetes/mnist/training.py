@@ -84,7 +84,7 @@ print("\nDoing Inference... \n")
 timing["inference"]["start"] = time.time()
 model = model.eval()
 
-test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=32, num_workers=10)
+test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=32, num_workers=1)
 
 predictions, labels = [], []
 for data, label in test_dataloader:
