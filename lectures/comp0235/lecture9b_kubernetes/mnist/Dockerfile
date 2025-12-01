@@ -3,6 +3,9 @@ FROM docker.io/library/almalinux:10
 # Update packages
 RUN dnf install -y epel-release && /usr/bin/crb enable && dnf update -y 
 
+# Set up python
+RUN dnf install -y python3-pip python3-devel
+
 # Make directory
 RUN mkdir /mnist
 WORKDIR /mnist
