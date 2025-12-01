@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mnist
+spec:
+  template:
+    spec:
+      containers:
+      - name: mnist
+        image: uccaoke-reg.comp0235.condenser.arc.ucl.ac.uk/class/julia_mnist:latest
+      restartPolicy: Never
+  backoffLimit: 4
