@@ -45,7 +45,7 @@ class ClassificationModel(torch.nn.Module):
 model = ClassificationModel()
 
 train_dataloader = torch.utils.data.DataLoader(
-    train_dataset, batch_size=16, shuffle=True, num_workers=20
+    train_dataset, batch_size=16, shuffle=True, num_workers=1
 )
 
 optimiser = torch.optim.Adam(model.parameters(), lr=0.001)
