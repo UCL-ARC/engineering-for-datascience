@@ -1,9 +1,6 @@
 import torch
 import torchvision
 from tqdm import tqdm
-import onnx
-import onnxruntime
-import numpy
 
 import time
 import json
@@ -116,37 +113,5 @@ show(x[0], colours=ANSI_COLOURS)
 print(f"Label: {classes[labels[0]]} Prediction: {classes[predictions[0]]}")
 print(f"Prediction accuracy over test set: {percentage}% ({count_samples} images)")
 
-# ONNX
-gibberish = torch.randn(1, 1, 28, 28, requires_grad=True)
-torch_gibberish = cpu_model(gibberish)
-onnx_file = "fashion_classifier.onnx"
-onnx_out_model = torch.onnx.export(cpu_model, 
-                               gibberish,
-                               onnx_file,
-                               export_params=True,
-                               input_names = ['input'],                       # the model's input names
-                               output_names = ['output'],                     # the model's output names
-                               dynamic_shapes={'input' : {0 : torch.export.Dim('batch_size')},    # variable length axes
-                                             'output' : {0 : torch.export.Dim('batch_size')}})
-
-print("Checking with ONNX")
-
-onnx_model = onnx.load(onnx_file)
-
-print("Checking with ONNX Runtime")
-
-ort_session = onnxruntime.InferenceSession(onnx_file, providers=["CPUExecutionProvider"])
-
-def to_numpy(tensor):
-    return tensor.detach().cpu().numpy() if tensor.requires_grad else tensor.cpu().numpy()
-
-# compute ONNX Runtime output prediction
-ort_inputs = {ort_session.get_inputs()[0].name: to_numpy(gibberish)}
-ort_outs = ort_session.run(None, ort_inputs)
-
-# compare ONNX Runtime and PyTorch results
-numpy.testing.assert_allclose(to_numpy(torch_gibberish), ort_outs[0], rtol=1e-03, atol=1e-05)
-
-print("Exported model has been tested with ONNXRuntime, and the result looks good!")
 
 print(json.dumps(timing, indent=4))
