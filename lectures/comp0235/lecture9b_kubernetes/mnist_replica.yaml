@@ -23,10 +23,10 @@ spec:
         image: uccaoke-reg.comp0235.condenser.arc.ucl.ac.uk/class/python_mnist:latest
       resources:
         limits:
-          cpu: "2"
+          cpu: "1"
           memory: "4Gi"
         requests: 
-          cpu: "2"
+          cpu: "1"
           memory: "4Gi"  
       restartPolicy: Never
   backoffLimit: 4
