@@ -25,8 +25,5 @@ spec:
         limits:
           cpu: "1"
           memory: "4Gi"
-        requests: 
-          cpu: "1"
-          memory: "4Gi"  
       restartPolicy: Never
   backoffLimit: 4
