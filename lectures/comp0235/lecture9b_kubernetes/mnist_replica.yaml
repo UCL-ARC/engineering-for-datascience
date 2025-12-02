@@ -3,8 +3,8 @@ kind: Job
 metadata:
   name: mnist-replica
 spec:
-  completions: 24
-  parallelism: 6 
+  completions: 12
+  parallelism: 3
   template:
     metadata:
       labels:
@@ -21,8 +21,8 @@ spec:
       - name: mnist
         image: uccaoke-reg.comp0235.condenser.arc.ucl.ac.uk/class/python_mnist:latest
       resources:
-        limits:
-          cpu: "1"
+        requests:
+          cpu: "2"
           memory: "4Gi"
       restartPolicy: Never
   backoffLimit: 4
