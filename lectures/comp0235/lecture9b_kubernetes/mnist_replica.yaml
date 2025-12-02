@@ -17,7 +17,6 @@ spec:
         labelSelector:
           matchLabels:
             app: mnist-replica
-    spec:
       containers:
       - name: mnist
         image: uccaoke-reg.comp0235.condenser.arc.ucl.ac.uk/class/python_mnist:latest
