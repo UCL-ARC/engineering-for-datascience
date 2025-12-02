@@ -7,5 +7,5 @@ output vm_ids {
 }
 
 output vm_urls {
-  value = "https://${harvester_virtualmachine.vm[*].tags.condenser_ingress_k3s_hostname}.comp0235.condenser.arc.ucl.ac.uk"
+  value = harvester_virtualmachine.vm[*].tags.condenser_ingress_k3s_hostname
 }
