@@ -6,6 +6,17 @@ spec:
   completions: 20
   parallelism: 3 
   template:
+    metadata:
+      labels:
+        app: mnist-replica
+    spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            app: mnist-replica
     spec:
       containers:
       - name: mnist
