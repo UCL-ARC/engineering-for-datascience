@@ -8,5 +8,12 @@ spec:
       containers:
       - name: mnist
         image: uccaoke-reg.comp0235.condenser.arc.ucl.ac.uk/class/python_mnist:latest
+      resources:
+        limits:
+          cpu: "2"
+          memory: "3.5Gi"
+        requests: 
+          cpu: "1"
+          memory: "2Gi"  
       restartPolicy: Never
   backoffLimit: 4
