@@ -70,6 +70,13 @@ resource "harvester_virtualmachine" "vm" {
     user_data_secret_name = harvester_cloudinit_secret.cloud-config.name
   }
 
+  tags = {
+    condenser_ingress_isEnabled = true
+    condenser_ingress_k3s_hostname = "${var.username}-k3s${format("%02d", count.index + 1)}"
+    condenser_ingress_k3s_port = 80
+    condenser_ingress_k3s_protocol = "http"
+  }
+
   timeouts {
     create = "20m"
     update = "20m"
