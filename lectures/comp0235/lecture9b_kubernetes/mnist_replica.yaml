@@ -4,7 +4,7 @@ metadata:
   name: mnist-replica
 spec:
   completions: 20
-  parallelism: 6 
+  parallelism: 3 
   template:
     spec:
       containers:
