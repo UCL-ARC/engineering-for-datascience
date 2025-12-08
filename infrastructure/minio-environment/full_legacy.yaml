@@ -2,4 +2,4 @@
 - hosts: all
   roles:
   - common
-  - minio_src
+  - minio_legacy
