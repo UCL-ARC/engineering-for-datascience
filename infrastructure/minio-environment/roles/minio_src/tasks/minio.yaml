@@ -136,6 +136,13 @@
     mode: "0640"
   become: true
   become_user: root
+- name: Create service file
+  ansible.builtin.get_url:
+    dest: /etc/systemd/system/minio.service
+    url: "https://raw.githubusercontent.com/minio/minio-service/refs/heads/master/linux-systemd/minio.service"
+    mode: 0755
+  become: true
+  become_user: root
 - name: Start Minio
   ansible.builtin.systemd_service:
     name: minio
