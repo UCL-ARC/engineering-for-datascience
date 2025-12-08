@@ -1,0 +1,5 @@
+---
+- import_tasks: second-disk.yaml
+- import_tasks: go.yaml
+- import_tasks: build.yaml
+- import_tasks: minio.yaml

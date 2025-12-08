@@ -1,0 +1,6 @@
+- name: Compile latest minio from source
+  ansible.builtin.shell: "go install github.com/minio/minio@latest"
+- name: Install new binary
+  ansible.builtin.shell: "cp ~almalinux/go/bin/minio /usr/local/bin/minio"
+  become: true
+  become_user: root
