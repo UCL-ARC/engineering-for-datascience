@@ -1,0 +1,8 @@
+- name: Install Go
+  ansible.builtin.dnf:
+    name:
+      - golang
+    state: latest
+  become: true
+  become_user: root
+
