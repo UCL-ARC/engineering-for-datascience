@@ -1,3 +1,4 @@
 {
-    "registry-mirrors": ["https://10.134.12.4:4000"]
+    "registry-mirrors": ["https://10.134.12.4:4000"],
+    "insecure-registries": ["https://10.134.12.4:4000"]
 }
