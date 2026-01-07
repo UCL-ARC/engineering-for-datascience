@@ -11,15 +11,15 @@
     mode: "0644"
   become: true
   become_user: root
-- name: Run exportfs
-  ansible.builtin.shell: exportfs -a
-  become: true
-  become_user: root
 - name: Enable NFS server service
   ansible.builtin.service:
     name: nfs-server
     enabled: true
     state: started 
+  become: true
+  become_user: root
+- name: Run exportfs
+  ansible.builtin.shell: exportfs -a
   become: true
   become_user: root
 - name: Make user directory
