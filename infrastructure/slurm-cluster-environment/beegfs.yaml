@@ -9,7 +9,7 @@
   - commonkeys-server-beegfs
   - beegfs-mgmt
   - beegfs-md
-- hosts: longinnode:workers
+- hosts: loginnode:workers
   roles:
   - commonkeys-clients-beegfs 
 - hosts: workers
