@@ -1,0 +1,42 @@
+
+- name: Generate connauthfile
+  local_action: ansible.builtin.command dd if=/dev/random of=./.generated/connauthfile bs=128 count=1
+- name: Auth file
+  ansible.builtin.copy:
+    src: ./.generated/connauthfile
+    dest: /etc/beegfs/conn.auth
+    owner: root
+    group: root
+    mode: 400
+  become: true
+  become_user: root
+- name: key config file
+  ansible.builtin.copy:
+    src: files/san.cnf
+    dest: /root/san.cnf
+  become: true
+  become_user: root
+- name: Check to see if we already have certificates
+  ansible.builtin.stat:
+    path: /etc/beegfs/cert.pem
+  register: certfile
+  become: true
+- name: BeeGFS certs
+  ansible.builtin.shell: 'openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /etc/beegfs/key.pem -out /etc/beegfs/cert.pem -config /root/san.cnf  -subj "/CN=mgmtnode"'
+  become: true
+  become_user: root
+  when: not certfile.stat.exists
+- name: Get private keys
+  ansible.builtin.fetch:
+    src: /etc/beegfs/key.pem
+    dest: ./.generated/
+    flat: true
+  become: true
+  become_user: root
+- name: Get certificate
+  ansible.builtin.fetch:
+    src: /etc/beegfs/cert.pem
+    dest: ./.generated/
+    flat: true
+  become: true
+  become_user: root

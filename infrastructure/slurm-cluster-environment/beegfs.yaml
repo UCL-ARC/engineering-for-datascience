@@ -6,8 +6,11 @@
 # Set up BeeGFS
 - hosts: mgmtnode
   roles: 
+  - commonkeys-server-beegfs
   - beegfs-mgmt
-  - beegfs-md 
+  - beegfs-md
+- hosts: longinnode:workers
+  - commonkeys-clients-beegfs 
 - hosts: workers
   roles:
   - beegfs-target

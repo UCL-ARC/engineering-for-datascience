@@ -1,0 +1,27 @@
+- name: Auth file
+  ansible.builtin.copy:
+    src: ./.generated/connauthfile
+    dest: /etc/beegfs/conn.auth
+    owner: root
+    group: root
+    mode: 400
+  become: true
+  become_user: root
+- name: Put private keys
+  ansible.builtin.copy:
+    src: ./.generated/key.pem
+    dest: /etc/beegfs/key.pem
+    mode: "0600"
+    owner: root
+    group: root
+  become: true
+  become_user: root
+- name: Put public keys
+  ansible.builtin.copy:
+    src: ./.generated/cert.pem
+    dest: /etc/beegfs/cert.pem
+    mode: "0600"
+    owner: root
+    group: root
+  become: true
+  become_user: root
