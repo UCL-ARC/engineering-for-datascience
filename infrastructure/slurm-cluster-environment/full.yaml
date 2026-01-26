@@ -5,7 +5,7 @@
   - openmpi
   - nfs-packages
   - slurm-packages
-  - beegfs-packages
+#  - beegfs-packages
   - hostfile
 
 - hosts: loginnode

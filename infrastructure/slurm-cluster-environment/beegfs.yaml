@@ -1,0 +1,16 @@
+---
+- hosts: all
+  roles:
+  - beegfs-packages
+
+# Set up BeeGFS
+- hosts: mgmtnode
+  roles: 
+  - beegfs-mgmt
+  - beegfs-md 
+- hosts: workers
+  roles:
+  - beegfs-target
+- hosts: loginnode:workers
+  roles:
+  - beegfs-client
