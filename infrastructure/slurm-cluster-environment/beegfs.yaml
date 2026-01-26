@@ -10,6 +10,7 @@
   - beegfs-mgmt
   - beegfs-md
 - hosts: longinnode:workers
+  roles:
   - commonkeys-clients-beegfs 
 - hosts: workers
   roles:
