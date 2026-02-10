@@ -2,6 +2,8 @@
   ansible.builtin.file:
     path: /beegfs_data/md
     state: absent
+  become: true
+  become_user: root
 - name: Create metadata location
   ansible.builtin.file:
     path: /beegfs_data/md

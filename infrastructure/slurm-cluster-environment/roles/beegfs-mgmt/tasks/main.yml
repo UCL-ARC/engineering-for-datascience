@@ -1,4 +1,9 @@
-
+- name: Clean management location
+  ansible.builtin.file:
+    path: /var/lib/beegfs/mgmtd.sqlite
+    state: absent
+  become: true
+  become_user: root
 - name: Configure management
   ansible.builtin.command:
     cmd: /opt/beegfs/sbin/beegfs-mgmtd --init
