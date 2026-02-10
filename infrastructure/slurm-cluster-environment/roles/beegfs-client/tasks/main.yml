@@ -5,7 +5,7 @@
     enabled: false
   become: true
   become_user: root
-  ingore_errors: true
+  ignore_errors: true
 - name: Create mount location
   ansible.builtin.file:
     path: /beegfs
