@@ -1,3 +1,11 @@
+- name: Stop metadata service if it is running.
+  ansible.builtin.systemd_service:
+    name: beegfs-meta
+    state: stopped
+    enabled: false
+  become: true
+  become_user: root
+  ingore_errors: true
 - name: Clean metadata location
   ansible.builtin.file:
     path: /beegfs_data/md

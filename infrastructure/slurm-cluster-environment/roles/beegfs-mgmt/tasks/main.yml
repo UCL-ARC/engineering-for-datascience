@@ -1,3 +1,11 @@
+- name: Stop management service if it is running.
+  ansible.builtin.systemd_service:
+    name: beegfs-mgmtd
+    state: stopped
+    enabled: false
+  become: true
+  become_user: root
+  ingore_errors: true
 - name: Clean management location
   ansible.builtin.file:
     path: /var/lib/beegfs/mgmtd.sqlite

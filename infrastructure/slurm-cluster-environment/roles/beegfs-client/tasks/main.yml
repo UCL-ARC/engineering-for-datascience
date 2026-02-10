@@ -1,3 +1,11 @@
+- name: Stop client service if it is running.
+  ansible.builtin.systemd_service:
+    name: beegfs-client
+    state: stopped
+    enabled: false
+  become: true
+  become_user: root
+  ingore_errors: true
 - name: Create mount location
   ansible.builtin.file:
     path: /beegfs
@@ -17,20 +25,6 @@
     group: root
   become: true
   become_user: root
-# - name: fix helperconf
-#   ansible.builtin.replace:
-#     path: /etc/beegfs/beegfs-helperd.conf
-#     regexp: 'connAuthFile[ \t]+='
-#     replace: 'connAuthFile=/etc/beegfs/connauthfile'
-#   become: true
-#   become_user: root
-# - name: start helperd
-#   ansible.builtin.systemd_service:
-#     name: beegfs-helperd
-#     state: started
-#     enabled: true
-#   become: true
-#   become_user: root
 - name: start client
   ansible.builtin.systemd_service:
     name: beegfs-client
