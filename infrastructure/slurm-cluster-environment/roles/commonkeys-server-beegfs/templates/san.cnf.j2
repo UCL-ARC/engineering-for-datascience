@@ -15,5 +15,7 @@ subjectAltName = @alt_names
 subjectAltName = @alt_names
 
 [ alt_names ]
-DNS.1   = localhost
-IP.1    = 127.0.0.1
+DNS.1   = mgmtnode
+DNS.2   = localhost
+IP.1    = {{groups["mgmtnode"][0]}}
+IP.2    = 127.0.0.1

@@ -11,8 +11,8 @@
   become: true
   become_user: root
 - name: key config file
-  ansible.builtin.copy:
-    src: files/san.cnf
+  ansible.builtin.template:
+    src: templates/san.cnf.j2
     dest: /root/san.cnf
   become: true
   become_user: root
