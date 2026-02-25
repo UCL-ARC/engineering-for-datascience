@@ -1,0 +1,10 @@
+---
+- hosts: all
+  roles:
+  - common
+- hosts: primary_node
+  roles: 
+  - primary
+- hosts: replicas
+  roles:
+  - replica
