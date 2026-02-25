@@ -1,0 +1,7 @@
+---
+- hosts: replicas
+  roles:
+  - common
+- hosts: replicas
+  roles:
+  - replica
