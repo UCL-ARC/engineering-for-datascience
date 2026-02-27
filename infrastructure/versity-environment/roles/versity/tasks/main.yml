@@ -35,6 +35,13 @@
     mode: '0600'
   become: true
   become_user: root
+- name: Copy TLS generation stub
+  ansible.builtin.copy:
+    mode: "0700"
+    src: "files/generate_certs.sh"
+    dest: "/root/generate_certs.sh"  
+  become: true
+  become_user: root
 - name: Check to see if we already have certificates
   ansible.builtin.stat:
     path: /root/versity.crt
