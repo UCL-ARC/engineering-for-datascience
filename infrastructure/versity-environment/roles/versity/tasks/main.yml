@@ -1,0 +1,54 @@
+- name: Get RPM
+  ansible.builtin.get_url:
+    url: "https://github.com/versity/versitygw/releases/download/v{{versity_version}}/versitygw_{{versity_version}}_linux_amd64.rpm"
+    dest: "/root/versitygw_{{versity_version}}_linux_amd64.rpm"
+  become: true
+  become_user: root
+- name: Get checksums
+  ansible.builtin.get_url:
+    url: "https://github.com/versity/versitygw/releases/download/v{{versity_version}}/checksums.txt"
+    dest: "/root/checksums_{{versity_version}}.txt"
+  become: true
+  become_user: root
+- name: Check checksums
+  ansible.builtin.shell: "sha256sum -c --ignore-missing checksums_{{versity_version}}.txt"
+  become: true
+  become_user: root
+- name: Install RPM
+  ansible.builtin.dnf:
+    name: "/root/versitygw_{{versity_version}}_linux_amd64.rpm"
+    state: present
+    disable_gpg_check: yes
+  become: true
+  become_user: root
+- name: Make IAM directory
+  ansible.builtin.file:
+    path: /vgw_iam
+    state: directory
+    owner: root
+  become: true
+  become_user: root
+- name: Set up config file
+  ansible.builtin.template:
+    src: templates/student.conf.j2
+    dest: /etc/versitygw.d/student.conf
+    mode: '0600'
+  become: true
+  become_user: root
+- name: Check to see if we already have certificates
+  ansible.builtin.stat:
+    path: /root/versity.crt
+  register: certfile
+  become: true
+- name: Create certificate
+  ansible.builtin.shell: "bash /root/generate_certs.sh {{inventory_hostname}}"
+  become: true
+  become_user: root
+  when: not certfile.stat.exists
+- name: Start service
+  ansible.builtin.systemd_service:
+    name: "versity@student"
+    state: started
+    enabled: true
+  become: true
+  become_user: root

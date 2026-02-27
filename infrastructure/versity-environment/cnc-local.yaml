@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  roles:
+  - common
+  - openmpi
+  - python312
+  - cnc

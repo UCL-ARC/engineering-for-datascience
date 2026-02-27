@@ -1,0 +1,17 @@
+VGW_BACKEND=posix
+VGW_BACKEND_ARG=/data
+
+VGW_PORT=:7070
+VGW_REGION=us-east-1
+VGW_CERT=/root/versity.crt
+VGW_KEY=/root/versity.key
+
+VGW_WEBUI_PORT=7071
+VGW_WEBUI_CERT=/root/versity.crt
+VGW_WEBUI_KEY=/root/versity.key
+
+VGW_IAM_DIR=/vgw_iam
+
+ROOT_ACCESS_KEY_ID=administrator
+ROOT_SECRET_ACCESS_KEY="{{lookup('ansible.builtin.password', './.versitypass', length=16) }}"
+
