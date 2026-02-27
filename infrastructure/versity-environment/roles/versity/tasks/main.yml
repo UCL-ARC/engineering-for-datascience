@@ -11,7 +11,7 @@
   become: true
   become_user: root
 - name: Check checksums
-  ansible.builtin.shell: "sha256sum -c --ignore-missing checksums_{{versity_version}}.txt"
+  ansible.builtin.shell: "cd /root; sha256sum -c --ignore-missing checksums_{{versity_version}}.txt"
   become: true
   become_user: root
 - name: Install RPM
