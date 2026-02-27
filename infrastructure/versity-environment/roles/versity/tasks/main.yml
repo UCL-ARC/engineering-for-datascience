@@ -54,7 +54,7 @@
   when: not certfile.stat.exists
 - name: Start service
   ansible.builtin.systemd_service:
-    name: "versity@student"
+    name: "versitygw@student"
     state: started
     enabled: true
   become: true
