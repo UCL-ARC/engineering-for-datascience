@@ -3,5 +3,5 @@
   roles:
   - common
   - reboot
-  - openmpi
-  - python312
+  - seconddisk
+  - versity
