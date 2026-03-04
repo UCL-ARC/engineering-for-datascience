@@ -1,0 +1,14 @@
+#
+[Unit]
+Description=Hive Service
+
+[Service]
+ExecStart={{hive_path}}/bin/start-metastore
+Type=simple 
+WorkingDirectory={{hive_path}}
+Environment="METASTORE_HOME={{hive_path}}"
+Environment="HADOOP_HOME={{hadoop_path}}"
+Environment="JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.442.b06-2.el9.x86_64"
+
+[Install]
+WantedBy=default.target

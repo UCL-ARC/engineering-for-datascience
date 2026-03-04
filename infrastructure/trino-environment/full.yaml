@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+  - common
+  - minio
+  - hadoop
+  - hive
+  - trino
