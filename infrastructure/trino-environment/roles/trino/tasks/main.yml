@@ -8,7 +8,7 @@
       - java-latest-openjdk
 - name: Select the 23 java as system default
   # The other services will pick up JAVA 8 through their JAVA_HOME
-  ansible.builtin.command: update-alternatives --set java java-latest-openjdk.x86_64
+  ansible.builtin.command: update-alternatives --set java java-latest-openjdk
   become: true
 - name: Create folder for trino
   ansible.builtin.file:
