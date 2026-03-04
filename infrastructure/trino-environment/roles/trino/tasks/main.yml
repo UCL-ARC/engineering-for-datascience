@@ -52,3 +52,7 @@
     mode: "0755"
     dest: /usr/local/bin/trino-cli
   become: true  
+- name: Start Trino
+  become: true
+  ansible.builtin.command: "{{ trino_path }}/bin/launcher start"
+  environment: "{{ trino_env }}"
