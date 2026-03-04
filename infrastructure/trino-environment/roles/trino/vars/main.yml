@@ -2,5 +2,5 @@
 trino_path: /usr/local/trino/trino-server-472/
 trino_install_path: /usr/local/trino/
 trino_env:
-  JAVA_HOME: /usr/lib/jvm/jre-23-openjdk
+  JAVA_HOME: /usr/lib/jvm/jre-26-openjdk
 minio_host: "https://{{lookup('ansible.builtin.file','./.miniohost')}}"
