@@ -1,4 +1,6 @@
 ---
+- name: Load the secrets
+  ansible.builtin.include_vars: secrets.yml
 - name: Install yum packages
   ansible.builtin.dnf:
     name: "{{ packages }}"
@@ -6,6 +8,7 @@
   vars:
     packages:
       - java-latest-openjdk
+      - httpd-tools # for htpasswd
 - name: Select the 23 java as system default
   # The other services will pick up JAVA 8 through their JAVA_HOME
   ansible.builtin.command: update-alternatives --set java /usr/lib/jvm/java-latest-openjdk/bin/java
@@ -32,6 +35,7 @@
     - jvm.config
     - log.properties
     - config.properties
+    - password-authenticator.properties
   notify: Restart Trino
 - name: Create folder for trino connectors
   ansible.builtin.file:
@@ -46,6 +50,16 @@
   loop:
     - hive.properties
   notify: Restart Trino
+- name: Populate the password file
+  # We were using the community.general.htpasswd module, 
+  # but it doesn't support bcrypt version 2y 
+  # which is needed for Trino. 
+  # So we have to shell out to htpasswd
+  ansible.builtin.shell:
+    cmd: |
+      touch "{{ trino_path }}/etc/passwords.properties"
+      htpasswd -bB -C 10 "{{ trino_path }}etc/passwords.properties" user "{{ trino_password }}" 
+  become: true
 - name: Put the CLI in /usr/local/bin
   ansible.builtin.get_url:
     url: https://repo1.maven.org/maven2/io/trino/trino-cli/472/trino-cli-472-executable.jar
