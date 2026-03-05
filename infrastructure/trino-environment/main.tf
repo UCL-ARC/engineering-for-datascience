@@ -37,7 +37,7 @@ resource "harvester_virtualmachine" "vm" {
 
   description = "Base VM"
 
-  cpu    = 4
+  cpu    = 12
   memory = "32Gi"
 
   efi         = true
@@ -86,6 +86,11 @@ resource "harvester_virtualmachine" "vm" {
     condenser_ingress_cons_port = 9091
     condenser_ingress_cons_protocol = "https"
     condenser_ingress_cons_nginx_proxy-body-size = "100000m"
+
+    condenser_ingress_trino_hostname = "${var.username}-trino"
+    condenser_ingress_trino_port = 80
+    condenser_ingress_trino_protocol = "http"
+    
   }
 
   cloudinit {
