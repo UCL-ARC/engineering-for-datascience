@@ -1,5 +1,5 @@
 name: run integration tests
-run-name: do integration tests on model
+run-name: do integration tests on model (self-hosted)
 on: [push]
 jobs:
   run-tests:
