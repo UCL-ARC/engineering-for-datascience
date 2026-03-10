@@ -1,6 +1,9 @@
 # Local .terraform directories
 .terraform/
 
+# Terraform lock files
+.terraform.lock.hcl
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
@@ -41,3 +44,19 @@ terraform.rc
 
 # VIM
 *.swp
+
+# generated files
+.generated
+.miniohost
+.miniopass
+
+# Python generated files
+venv/
+__pycache__/
+*.pyc
+__pycache__
+
+# Generated s3 config
+s3.json
+
+infrastructure/trino-environment/roles/trino/vars/secrets.yml
