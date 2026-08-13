@@ -4,6 +4,7 @@
     - slurm
     - slurm-slurmd
     - slurm-slurmctld
+    - slurm-slurmrestd
     - munge
     state: latest
   become: true
