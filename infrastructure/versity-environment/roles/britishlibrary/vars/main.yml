@@ -1,0 +1,10 @@
+---
+britishlibrary_url: https://s3.ds4eng.condenser.arc.ucl.ac.uk/britishlibrary
+britishlibrary_files:
+  - 1510_1699.zip
+rclone_env:
+  RCLONE_CONFIG_VERSITY_TYPE: s3
+  RCLONE_CONFIG_VERSITY_PROVIDER: Other
+  RCLONE_CONFIG_VERSITY_ENDPOINT: "https://{{inventory_hostname}}:7070"
+  RCLONE_CONFIG_VERSITY_ACCESS_KEY_ID: administrator
+  RCLONE_CONFIG_VERSITY_SECRET_ACCESS_KEY: "{{lookup('ansible.builtin.file','./.versitypass')}}"
