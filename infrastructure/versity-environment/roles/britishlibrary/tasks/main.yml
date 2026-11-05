@@ -1,0 +1,37 @@
+- name: Install rclone
+  ansible.builtin.dnf:
+    name: rclone
+    state: present
+  become: true
+  become_user: root
+- name: Trust the gateway certificate on this VM
+  # rclone's --ca-cert replaces its whole CA pool, which would stop it
+  # trusting the course bucket, so trust the self-signed cert system-wide
+  ansible.builtin.copy:
+    remote_src: true
+    src: /root/versity.crt
+    dest: /etc/pki/ca-trust/source/anchors/versity.crt
+    mode: "0644"
+  register: anchor
+  become: true
+  become_user: root
+- name: Update the system CA bundle
+  ansible.builtin.command: update-ca-trust
+  when: anchor.changed
+  become: true
+  become_user: root
+- name: Create the britishlibrary bucket
+  ansible.builtin.command: "rclone mkdir versity:britishlibrary"
+  environment: "{{rclone_env}}"
+- name: List objects already in the bucket
+  ansible.builtin.command: "rclone lsf versity:britishlibrary"
+  environment: "{{rclone_env}}"
+  register: existing_objects
+  changed_when: false
+- name: Stream the zips from the course bucket into the gateway
+  # Upload through the S3 API rather than copying onto /data: the posix
+  # backend gives files placed there directly an empty ETag
+  ansible.builtin.command: "rclone copyurl {{britishlibrary_url}}/{{item}} versity:britishlibrary/{{item}}"
+  environment: "{{rclone_env}}"
+  loop: "{{britishlibrary_files}}"
+  when: item not in existing_objects.stdout_lines

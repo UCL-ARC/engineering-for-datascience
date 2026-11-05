@@ -49,6 +49,7 @@ terraform.rc
 .generated
 .miniohost
 .miniopass
+.versitypass
 
 # Python generated files
 venv/

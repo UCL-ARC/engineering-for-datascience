@@ -6,9 +6,10 @@ VGW_PORT=:7070
 VGW_CERT=/root/versity.crt
 VGW_KEY=/root/versity.key
 
-#VGW_WEBUI_PORT=7071
-#VGW_WEBUI_CERT=/root/versity.crt
-#VGW_WEBUI_KEY=/root/versity.key
+# Serve the WebUI from the S3 port (https://<s3_url>/ui/) so the browser only
+# talks to one origin, and point it at the public ingress, not the VM's own IP
+VGW_WEBUI_S3_PREFIX=/ui
+VGW_WEBUI_GATEWAYS=https://{{s3_url}}
 
 VGW_IAM_DIR=/vgw_iam
 
