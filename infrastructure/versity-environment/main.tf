@@ -1,7 +1,7 @@
-# Interpret namespace and network name based on user name
+# Interpret namespace and network name based on user name, unless a namespace is given
 locals {
-  namespace = "${var.username}-comp0235-ns"
-  network_name = "${var.username}-comp0235-ns/ds4eng"
+  namespace = var.namespace != "" ? var.namespace : "${var.username}-comp0235-ns"
+  network_name = "${local.namespace}/ds4eng"
 }
 
 data "harvester_image" "img" {

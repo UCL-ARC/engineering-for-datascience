@@ -13,6 +13,11 @@ variable keyname {
 #  default = ""
 }
 
+variable namespace {
+  type    = string
+  default = ""
+}
+
 variable vm_count {
   type    = number
   default = 1

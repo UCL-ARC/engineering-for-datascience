@@ -34,7 +34,9 @@ terraform init
 terraform apply -var username=<ucl-id> -var keyname=<rancher-key-name>
 ```
 
-`username` is your UCL ID. `keyname` is the name of your SSH key in Rancher. Neither has a default, so Terraform asks for them if you leave out `-var`. To save typing them every time, put them in a `terraform.tfvars` file in this directory (git ignores it):
+`username` is your UCL ID. `keyname` is the name of your SSH key in Rancher. Neither has a default, so Terraform asks for them if you leave out `-var`.
+
+Terraform uses the namespace `<username>-comp0235-ns` by default. If your VMs and SSH key live in a different namespace, add `-var namespace=<namespace>`, for example `-var namespace=ds4eng-ns`. The network is then `<namespace>/ds4eng`. To save typing them every time, put them in a `terraform.tfvars` file in this directory (git ignores it):
 
 ```hcl
 username = "<ucl-id>"
